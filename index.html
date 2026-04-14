@@ -173,27 +173,6 @@
     }
     .whatsapp-float:hover { transform: scale(1.05); }
     
-    /* AI Assistant Button - Left Side */
-    .chatbot-button {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      background: linear-gradient(135deg, #0066cc, #0099ff);
-      color: white;
-      border: none;
-      border-radius: 60px;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-    .chatbot-button:hover { transform: scale(1.05); background: linear-gradient(135deg, #0055bb, #0088ee); }
-    
     /* Header */
     .header { 
       background: rgba(15, 23, 42, 0.75);
@@ -218,7 +197,7 @@
     .phone-link:hover { background: rgba(255,107,53,0.4); color: white; }
     @media (max-width: 800px) { .header-flex { flex-direction: column; } .nav-links { justify-content: center; } .dropdown-content { position: static; display: none; width: 100%; } .dropdown:hover .dropdown-content { display: block; } }
     
-    /* Hero Section - UPDATED with selectable pills */
+    /* Hero Section */
     .hero-section {
       background: rgba(20, 30, 45, 0.45);
       backdrop-filter: blur(16px) saturate(180%);
@@ -261,7 +240,6 @@
       color: #94a3b8;
       margin-bottom: 30px;
     }
-    /* Selectable Pills */
     .pill-selector {
       display: flex;
       flex-wrap: wrap;
@@ -490,7 +468,6 @@
     
     .urgency-banner { background: rgba(20, 30, 45, 0.55); backdrop-filter: blur(16px) saturate(180%); border-left: 4px solid #ff6b35; padding: 20px 28px; border-radius: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin: 20px; color: #cbd5e1; border: 1px solid rgba(255,255,255,0.12); border-left-width: 4px; }
     
-    /* CTA BANNER */
     .cta-banner {
       background: linear-gradient(135deg, rgba(255,107,53,0.25), rgba(0,191,255,0.15));
       backdrop-filter: blur(16px);
@@ -567,7 +544,6 @@
       .step-number { width: 50px; height: 50px; font-size: 1.5rem; }
       .scroll-top { bottom: 90px; right: 20px; width: 40px; height: 40px; }
       .whatsapp-float { bottom: 20px; right: 20px; padding: 8px 16px; }
-      .chatbot-button { bottom: 20px; left: 20px; padding: 10px 16px; }
     }
   </style>
   <!-- Font Awesome 6 -->
@@ -588,8 +564,7 @@
 <!-- WhatsApp Button - Right Side -->
 <a href="https://wa.me/27101234567?text=Hi%21%20I%27m%20interested%20in%20selecting%20my%20requirements." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
 
-<!-- AI Assistant Button - Left Side -->
-<div class="chatbot-button" id="chatbotButton"><i class="fas fa-robot"></i> AI Assistant</div>
+<!-- NOTE: AI Assistant button is created by ai-assistant.js - DO NOT add a separate button here -->
 
 <header class="header">
   <div class="container header-flex">
@@ -619,14 +594,13 @@
   </div>
 </header>
 
-<!-- HERO SECTION - UPDATED with selectable pills for Network, CCTV, Alarms -->
+<!-- HERO SECTION -->
 <div class="container">
   <div class="hero-section">
     <h1 class="hero-title">EVO HOME TECH</h1>
     <div class="hero-tagline">Comprehensive installation and Integration of Network/CCTV/Alarms</div>
     <div class="hero-sub">No Lagging, No dead zones, No blind spots. Complete peace of mind.</div>
     
-    <!-- Selectable Pills -->
     <div class="pill-selector">
       <a href="network.html" class="pill"><i class="fas fa-network-wired"></i> NETWORK</a>
       <a href="cctv-intercom.html" class="pill"><i class="fas fa-video"></i> CCTV</a>
@@ -699,25 +673,16 @@
 
 <div class="container section"><div class="urgency-banner"><span><i class="fas fa-calendar-week"></i> <strong style="color:#ff6b35;">Limited installation slots this week</strong> — Next available: 22 April</span><span><i class="fas fa-gift"></i> <strong style="color:#ff6b35;">Free smart sensor (R850 value)</strong> if you book by Friday</span><a href="requirements.html" class="btn-primary" style="padding: 10px 22px;">Select My Requirements <i class="fas fa-arrow-right"></i></a></div></div>
 
-<!-- CTA BANNER - Get Your Personalized Solution -->
+<!-- CTA BANNER -->
 <div class="container">
   <div class="cta-banner">
     <div class="cta-icon">📋✨</div>
     <h2 class="cta-title">Get Your Personalized Solution in 3 Simple Steps</h2>
     <p class="cta-desc">No technical knowledge needed. Just tell us about your property and what matters to you.</p>
     <div class="cta-steps">
-      <div class="step-item">
-        <div class="step-number">1</div>
-        <div class="step-text">Tell us about<br>your property</div>
-      </div>
-      <div class="step-item">
-        <div class="step-number">2</div>
-        <div class="step-text">Select what's<br>important to you</div>
-      </div>
-      <div class="step-item">
-        <div class="step-number">3</div>
-        <div class="step-text">We'll contact you<br>to discuss solutions</div>
-      </div>
+      <div class="step-item"><div class="step-number">1</div><div class="step-text">Tell us about<br>your property</div></div>
+      <div class="step-item"><div class="step-number">2</div><div class="step-text">Select what's<br>important to you</div></div>
+      <div class="step-item"><div class="step-number">3</div><div class="step-text">We'll contact you<br>to discuss solutions</div></div>
     </div>
     <a href="requirements.html" class="btn-primary btn-cta"><i class="fas fa-clipboard-list"></i> Select My Requirements →</a>
   </div>
@@ -833,12 +798,6 @@ window.addEventListener('scroll', () => {
   scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
 });
 scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-// AI Assistant Button
-document.getElementById('chatbotButton')?.addEventListener('click', function() {
-  const chatbotWindow = document.getElementById('chatbotWindow');
-  if (chatbotWindow) chatbotWindow.style.display = 'flex';
-});
 
 // Brands Carousel
 const brands = [
