@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Complete home security solutions in Midrand. CCTV & intercom, alarm systems. Free security assessment.">
+  <title>Security Solutions | CCTV • Alarms | Evo Home Tech</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Particle Canvas Background */
+    #particleCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 50%, #1a1a2e 100%);
+      display: block;
+    }
+    
+    /* Windows Light Theme */
+    .windows-light-theme {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .windows-light-theme::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(ellipse at 30% 40%, rgba(100, 180, 250, 0.12), rgba(70, 130, 200, 0.04) 40%, transparent 70%);
+      animation: softPulse 12s ease-in-out infinite;
+    }
+    .windows-light-theme::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      right: -10%;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(ellipse at 70% 80%, rgba(255, 200, 150, 0.08), rgba(100, 150, 220, 0.03) 50%, transparent 70%);
+      animation: softPulseAlt 15s ease-in-out infinite;
+    }
+    .light-streak {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      background: repeating-linear-gradient(115deg, transparent, transparent 40%, rgba(135, 206, 235, 0.03) 45%, rgba(135, 206, 235, 0.05) 50%, transparent 55%, transparent 100%);
+      background-size: 200% 200%;
+      animation: lightStreak 20s linear infinite;
+    }
+    
+    @keyframes softPulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+    @keyframes softPulseAlt { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.08); } }
+    @keyframes lightStreak { 0% { background-position: 0% 0%; } 100% { background-position: 200% 200%; } }
+    
+    .gradient-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at 20% 30%, rgba(255,107,53,0.06), transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(0,191,255,0.05), transparent 60%);
+      pointer-events: none;
+    }
+    
+    body { 
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; 
+      background: transparent; 
+      color: #e2e8f0; 
+      line-height: 1.5; 
+      position: relative;
+      z-index: 1;
+    }
+    
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    
+    .btn-primary { 
+      background: linear-gradient(135deg, #ff6b35, #ff8c42); 
+      color: white; 
+      border: none; 
+      padding: 14px 32px; 
+      font-size: 1rem; 
+      font-weight: 600; 
+      border-radius: 40px; 
+      cursor: pointer; 
+      display: inline-block; 
+      text-decoration: none; 
+      text-align: center; 
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255,107,53,0.3);
+    }
+    .btn-primary:hover { 
+      background: linear-gradient(135deg, #e55a2b, #ff7a33); 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 25px rgba(255,107,53,0.4);
+    }
+    
+    .btn-outline { 
+      background: rgba(20, 30, 45, 0.55);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0,191,255,0.5); 
+      color: #00bfff; 
+      padding: 12px 28px; 
+      border-radius: 40px; 
+      font-weight: 600; 
+      text-decoration: none; 
+      display: inline-block; 
+      transition: all 0.3s ease;
+    }
+    .btn-outline:hover { 
+      background: rgba(0,191,255,0.2); 
+      border-color: #00bfff;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .scroll-top.visible { opacity: 1; visibility: visible; }
+    .scroll-top:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,107,53,0.4); }
+    .scroll-top i { color: white; font-size: 1.3rem; }
+    
+    /* WhatsApp Button */
+    .whatsapp-float { 
+      position: fixed; 
+      bottom: 30px; 
+      right: 30px; 
+      background: linear-gradient(135deg, #25D366, #128C7E); 
+      color: white; 
+      border-radius: 50px; 
+      padding: 12px 24px; 
+      display: flex; 
+      align-items: center; 
+      gap: 10px; 
+      text-decoration: none; 
+      font-weight: 600; 
+      z-index: 1000; 
+      transition: all 0.3s ease; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .whatsapp-float:hover { transform: scale(1.05); }
+    
+    /* AI Assistant Button */
+    .chatbot-button {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: linear-gradient(135deg, #0066cc, #0099ff);
+      color: white;
+      border: none;
+      border-radius: 60px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .chatbot-button:hover { transform: scale(1.05); background: linear-gradient(135deg, #0055bb, #0088ee); }
+    
+    /* Header */
+    .header { 
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid rgba(255,107,53,0.3);
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+    }
+    .header-flex { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; flex-wrap: wrap; gap: 16px; }
+    .logo { font-size: 1.8rem; font-weight: 700; background: linear-gradient(135deg, #ff8c42, #00bfff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .logo span { background: linear-gradient(135deg, #ff6b35, #87ceeb); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: #cbd5e1; font-weight: 500; transition: all 0.2s; }
+    .nav-links a:hover { color: #ff8c42; }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content { display: none; position: absolute; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); min-width: 260px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-radius: 16px; z-index: 1; top: 100%; left: 0; padding: 8px 0; border: 1px solid rgba(255,107,53,0.3); }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a { display: block; padding: 10px 20px; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
+    .dropdown-content a:hover { background: rgba(255,107,53,0.2); color: #ff8c42; border-radius: 12px; }
+    .phone-link { font-size: 1.1rem; font-weight: 600; background: rgba(255,107,53,0.2); border: 1px solid rgba(255,107,53,0.4); padding: 8px 18px; border-radius: 40px; text-decoration: none; color: #ff8c42; }
+    .phone-link:hover { background: rgba(255,107,53,0.4); color: white; }
+    @media (max-width: 800px) { .header-flex { flex-direction: column; } .nav-links { justify-content: center; } .dropdown-content { position: static; display: none; width: 100%; } .dropdown:hover .dropdown-content { display: block; } }
+    
+    /* Hero Section */
+    .hero { 
+      background: linear-gradient(135deg, #8B0000, #CC3300); 
+      padding: 60px 0; 
+      text-align: center;
+      border-radius: 48px;
+      margin: 30px 20px;
+      border: 1px solid rgba(255,107,53,0.3);
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 16px; }
+    .hero p { font-size: 1.2rem; color: #cbd5e1; }
+    
+    .category-grid { display: flex; flex-wrap: wrap; gap: 30px; margin: 50px 0; }
+    .category-card { 
+      background: rgba(20, 30, 45, 0.55);
+      backdrop-filter: blur(16px);
+      border-radius: 28px; 
+      padding: 30px; 
+      flex: 1; 
+      min-width: 280px; 
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.2s; 
+      text-decoration: none; 
+      color: #e2e8f0; 
+      display: block; 
+    }
+    .category-card:hover { transform: translateY(-6px); border-color: rgba(255,107,53,0.3); }
+    .category-icon { font-size: 3rem; margin-bottom: 16px; color: #ff8c42; }
+    .category-card h2 { margin-bottom: 12px; color: #ff8c42; }
+    .category-card p { color: #cbd5e1; }
+    .feature-list { list-style: none; margin-top: 20px; }
+    .feature-list li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); color: #cbd5e1; }
+    .feature-list li:before { content: "✓ "; color: #00bfff; font-weight: bold; margin-right: 8px; }
+    
+    .footer { background: rgba(15, 26, 36, 0.8); backdrop-filter: blur(12px); color: #94a3b8; padding: 40px 0; text-align: center; margin-top: 40px; border-top: 1px solid rgba(255,107,53,0.2); }
+    .footer a { color: #ff8c42; text-decoration: none; }
+    .footer a:hover { color: #00bfff; }
+    
+    @media (max-width: 700px) { 
+      .hero h1 { font-size: 1.8rem; } 
+      .hero p { font-size: 1rem; }
+      .category-card { min-width: 100%; }
+      .scroll-top { bottom: 90px; right: 20px; width: 40px; height: 40px; }
+      .whatsapp-float { bottom: 20px; right: 20px; padding: 8px 16px; }
+      .chatbot-button { bottom: 20px; left: 20px; padding: 10px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+<div class="windows-light-theme"></div>
+<div class="light-streak"></div>
+<div class="gradient-overlay"></div>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top" id="scrollTopBtn">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- WhatsApp Button - Right Side -->
+<a href="https://wa.me/27101234567?text=Hi%21%20I%27m%20interested%20in%20your%20security%20solutions." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+
+<!-- AI Assistant Button - Left Side -->
+<div class="chatbot-button" id="chatbotButton"><i class="fas fa-robot"></i> AI Assistant</div>
+
+<header class="header">
+  <div class="container header-flex">
+    <div class="logo">evo<span>home tech</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+          <a href="network.html"><i class="fas fa-network-wired"></i> Network Overview</a>
+          <a href="wifi-mesh.html"><i class="fas fa-wifi"></i> Wi-Fi Mesh</a>
+          <a href="network-upgrade.html"><i class="fas fa-server"></i> Network Upgrades</a>
+          <a href="nas.html"><i class="fas fa-database"></i> NAS Storage</a>
+          <div style="height:1px; background:rgba(255,107,53,0.3); margin:8px 0;"></div>
+          <a href="security.html"><i class="fas fa-shield-alt"></i> Security Overview</a>
+          <a href="cctv-intercom.html"><i class="fas fa-video"></i> CCTV & Intercom</a>
+          <a href="alarm-systems.html"><i class="fas fa-bell"></i> Alarm Systems</a>
+          <div style="height:1px; background:rgba(255,107,53,0.3); margin:8px 0;"></div>
+          <a href="farms.html"><i class="fas fa-tractor"></i> Farms & Agriculture</a>
+        </div>
+      </div>
+      <a href="requirements.html"><i class="fas fa-clipboard-list"></i> Select My Requirements</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="tel:+27101234567" class="phone-link"><i class="fas fa-phone-alt"></i> +27 (0)10 123 4567</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1><i class="fas fa-shield-alt"></i> Home Security Solutions</h1>
+    <p>Protect what matters most. 24/7 monitoring, mobile alerts, and load shedding backup.</p>
+  </div>
+</section>
+
+<div class="container" style="padding: 40px 0;">
+  <div class="category-grid">
+    <a href="cctv-intercom.html" class="category-card">
+      <div class="category-icon"><i class="fas fa-video"></i></div>
+      <h2>CCTV & Intercom</h2>
+      <p>Works on your phone AND the indoor panel. See, speak, and record – from anywhere.</p>
+      <ul class="feature-list">
+        <li>4MP / 4K resolution – crystal clear images</li>
+        <li>Full color night vision – see at 2AM</li>
+        <li>AI person/vehicle detection – no false alerts</li>
+        <li>Two-way talk – speak to visitors remotely</li>
+        <li>Remote door unlock from phone or panel</li>
+      </ul>
+      <p style="margin-top: 16px; color: #00bfff; font-weight:500;">Learn more <i class="fas fa-arrow-right"></i></p>
+    </a>
+
+    <a href="alarm-systems.html" class="category-card">
+      <div class="category-icon"><i class="fas fa-bell"></i></div>
+      <h2>Alarm Systems</h2>
+      <p>Protect you and your assets – when you're home, away, or during load shedding.</p>
+      <ul class="feature-list">
+        <li>Mobile app control – arm/disarm from anywhere</li>
+        <li>Load shedding backup – 8-12 hours battery</li>
+        <li>Wireless sensors – doors, windows, motion</li>
+        <li>Cellular backup – works if internet is down</li>
+        <li>SAPS registered & monitored options</li>
+      </ul>
+      <p style="margin-top: 16px; color: #00bfff; font-weight:500;">Learn more <i class="fas fa-arrow-right"></i></p>
+    </a>
+  </div>
+
+  <div style="background: linear-gradient(135deg, rgba(255,107,53,0.15), rgba(0,191,255,0.05)); backdrop-filter: blur(8px); border-radius: 32px; padding: 40px; margin: 40px 0; text-align:center; border: 1px solid rgba(255,107,53,0.3);">
+    <h3 style="color: #ff8c42; margin-bottom: 16px;"><i class="fas fa-question-circle"></i> Not sure what security you need?</h3>
+    <p style="color: #cbd5e1; margin-bottom: 24px;">Use our Requirements tool – answer a few questions and get a custom security recommendation.</p>
+    <a href="requirements.html" class="btn-primary"><i class="fas fa-clipboard-list"></i> Select My Requirements →</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Evo Home Tech — Network • Security • Farms | Midrand, SA</p>
+    <p><i class="fas fa-map-marker-alt"></i> 69 State Road, President Park | <a href="mailto:hello@evohometech.co.za"><i class="fas fa-envelope"></i> hello@evohometech.co.za</a></p>
+  </div>
+</footer>
+
+<script src="ai-assistant.js"></script>
+
+<script>
+// Particle Background
+(function() {
+  const canvas = document.getElementById('particleCanvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let mouseX = null, mouseY = null;
+  
+  function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
+      this.radius = 2 + Math.random() * 2.5;
+      this.baseColor = `hsl(${200 + Math.random() * 40}, 70%, 55%)`;
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy;
+      if (this.x < -50) this.x = canvas.width + 50;
+      if (this.x > canvas.width + 50) this.x = -50;
+      if (this.y < -50) this.y = canvas.height + 50;
+      if (this.y > canvas.height + 50) this.y = -50;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.baseColor;
+      ctx.fill();
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = this.baseColor;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+  }
+  
+  function initParticles(count) { particles = []; for (let i = 0; i < count; i++) particles.push(new Particle()); }
+  
+  function drawConnections() {
+    const connectionDistance = 130;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < connectionDistance) {
+          const opacity = (1 - distance / connectionDistance) * 0.25;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(255, 140, 66, ${opacity})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+  
+  function drawMouseConnection() {
+    if (mouseX === null) return;
+    for (let i = 0; i < particles.length; i++) {
+      const dx = particles[i].x - mouseX;
+      const dy = particles[i].y - mouseY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 150) {
+        const opacity = (1 - distance / 150) * 0.4;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(mouseX, mouseY);
+        ctx.strokeStyle = `rgba(0, 191, 255, ${opacity})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      }
+    }
+  }
+  
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, '#0a0f1a');
+    gradient.addColorStop(0.5, '#0f172a');
+    gradient.addColorStop(1, '#1a1a2e');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    for (let particle of particles) { particle.update(); particle.draw(); }
+    drawConnections();
+    drawMouseConnection();
+    requestAnimationFrame(animate);
+  }
+  
+  window.addEventListener('resize', () => { resizeCanvas(); initParticles(Math.floor(window.innerWidth * window.innerHeight / 14000)); });
+  window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+  window.addEventListener('mouseleave', () => { mouseX = null; mouseY = null; });
+  resizeCanvas();
+  initParticles(Math.floor(window.innerWidth * window.innerHeight / 14000));
+  animate();
+})();
+
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+  scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// AI Assistant Button
+document.getElementById('chatbotButton')?.addEventListener('click', function() {
+  const chatbotWindow = document.getElementById('chatbotWindow');
+  if (chatbotWindow) chatbotWindow.style.display = 'flex';
+});
+</script>
+</body>
+</html>
