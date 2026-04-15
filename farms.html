@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Security and networking solutions for farms and agricultural holdings in Midrand. Long-range CCTV, alarm systems, and wireless networking for large properties.">
-  <title>Farms & Agriculture | Security & Networking | Evo Home Tech</title>
+  <meta name="description" content="Net Cam SA - Professional security and networking solutions for farms and agricultural holdings. Long-range CCTV, alarm systems, and wireless networking for large properties.">
+  <title>Farms & Agriculture | Security & Networking | Net Cam SA</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    /* Particle Canvas Background */
+    /* Particle Canvas Background - Light & Clean */
     #particleCanvas {
       position: fixed;
       top: 0;
@@ -18,11 +18,10 @@
       width: 100%;
       height: 100%;
       z-index: -2;
-      background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 50%, #1a1a2e 100%);
+      background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 50%, #d9e2ec 100%);
       display: block;
     }
     
-    /* Windows Light Theme */
     .windows-light-theme {
       position: fixed;
       top: 0;
@@ -39,7 +38,7 @@
       left: -20%;
       width: 140%;
       height: 140%;
-      background: radial-gradient(ellipse at 30% 40%, rgba(100, 180, 250, 0.12), rgba(70, 130, 200, 0.04) 40%, transparent 70%);
+      background: radial-gradient(ellipse at 30% 40%, rgba(0, 102, 204, 0.06), rgba(0, 153, 255, 0.02) 40%, transparent 70%);
       animation: softPulse 12s ease-in-out infinite;
     }
     .windows-light-theme::after {
@@ -49,7 +48,7 @@
       right: -10%;
       width: 120%;
       height: 120%;
-      background: radial-gradient(ellipse at 70% 80%, rgba(255, 200, 150, 0.08), rgba(100, 150, 220, 0.03) 50%, transparent 70%);
+      background: radial-gradient(ellipse at 70% 80%, rgba(255, 107, 53, 0.04), rgba(0, 102, 204, 0.01) 50%, transparent 70%);
       animation: softPulseAlt 15s ease-in-out infinite;
     }
     .light-streak {
@@ -60,7 +59,7 @@
       height: 100%;
       z-index: -1;
       pointer-events: none;
-      background: repeating-linear-gradient(115deg, transparent, transparent 40%, rgba(135, 206, 235, 0.03) 45%, rgba(135, 206, 235, 0.05) 50%, transparent 55%, transparent 100%);
+      background: repeating-linear-gradient(115deg, transparent, transparent 40%, rgba(0, 102, 204, 0.03) 45%, rgba(0, 102, 204, 0.05) 50%, transparent 55%, transparent 100%);
       background-size: 200% 200%;
       animation: lightStreak 20s linear infinite;
     }
@@ -76,15 +75,15 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: radial-gradient(circle at 20% 30%, rgba(255,107,53,0.06), transparent 50%),
-                  radial-gradient(circle at 80% 70%, rgba(0,191,255,0.05), transparent 60%);
+      background: radial-gradient(circle at 20% 30%, rgba(255,107,53,0.03), transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(0,102,204,0.03), transparent 60%);
       pointer-events: none;
     }
     
     body { 
       font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; 
       background: transparent; 
-      color: #e2e8f0; 
+      color: #ffffff; 
       line-height: 1.5; 
       position: relative;
       z-index: 1;
@@ -93,7 +92,7 @@
     .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
     
     .btn-primary { 
-      background: linear-gradient(135deg, #ff6b35, #ff8c42); 
+      background: #0066cc;
       color: white; 
       border: none; 
       padding: 14px 32px; 
@@ -105,19 +104,18 @@
       text-decoration: none; 
       text-align: center; 
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255,107,53,0.3);
+      box-shadow: 0 2px 8px rgba(0,102,204,0.2);
     }
     .btn-primary:hover { 
-      background: linear-gradient(135deg, #e55a2b, #ff7a33); 
+      background: #004999; 
       transform: translateY(-2px); 
-      box-shadow: 0 8px 25px rgba(255,107,53,0.4);
+      box-shadow: 0 6px 16px rgba(0,102,204,0.3);
     }
     
     .btn-outline { 
-      background: rgba(20, 30, 45, 0.55);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(0,191,255,0.5); 
-      color: #00bfff; 
+      background: transparent;
+      border: 2px solid #0066cc; 
+      color: #ffffff; 
       padding: 12px 28px; 
       border-radius: 40px; 
       font-weight: 600; 
@@ -126,8 +124,8 @@
       transition: all 0.3s ease;
     }
     .btn-outline:hover { 
-      background: rgba(0,191,255,0.2); 
-      border-color: #00bfff;
+      background: #0066cc; 
+      border-color: #0066cc;
       color: white;
       transform: translateY(-2px);
     }
@@ -139,7 +137,7 @@
       right: 30px;
       width: 50px;
       height: 50px;
-      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      background: #0066cc;
       border-radius: 50px;
       display: flex;
       align-items: center;
@@ -149,10 +147,10 @@
       transition: all 0.3s ease;
       opacity: 0;
       visibility: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
     .scroll-top.visible { opacity: 1; visibility: visible; }
-    .scroll-top:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,107,53,0.4); }
+    .scroll-top:hover { transform: translateY(-3px); background: #004999; }
     .scroll-top i { color: white; font-size: 1.3rem; }
     
     /* WhatsApp Button */
@@ -160,7 +158,7 @@
       position: fixed; 
       bottom: 30px; 
       right: 30px; 
-      background: linear-gradient(135deg, #25D366, #128C7E); 
+      background: #25D366; 
       color: white; 
       border-radius: 50px; 
       padding: 12px 24px; 
@@ -171,104 +169,181 @@
       font-weight: 600; 
       z-index: 1000; 
       transition: all 0.3s ease; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
-    .whatsapp-float:hover { transform: scale(1.05); }
+    .whatsapp-float:hover { transform: scale(1.05); background: #128C7E; }
     
-    /* AI Assistant Button */
-    .chatbot-button {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      background: linear-gradient(135deg, #0066cc, #0099ff);
-      color: white;
-      border: none;
-      border-radius: 60px;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-    .chatbot-button:hover { transform: scale(1.05); background: linear-gradient(135deg, #0055bb, #0088ee); }
-    
-    /* Header */
+    /* Header - Blue */
     .header { 
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(16px) saturate(180%);
-      border-bottom: 1px solid rgba(255,107,53,0.3);
+      background: #0066cc;
       position: sticky; 
       top: 0; 
       z-index: 100; 
     }
-    .header-flex { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; flex-wrap: wrap; gap: 16px; }
-    .logo { font-size: 1.8rem; font-weight: 700; background: linear-gradient(135deg, #ff8c42, #00bfff); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .logo span { background: linear-gradient(135deg, #ff6b35, #87ceeb); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
-    .nav-links a { text-decoration: none; color: #cbd5e1; font-weight: 500; transition: all 0.2s; }
-    .nav-links a:hover { color: #ff8c42; }
-    .dropdown { position: relative; display: inline-block; }
-    .dropdown-content { display: none; position: absolute; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); min-width: 260px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-radius: 16px; z-index: 1; top: 100%; left: 0; padding: 8px 0; border: 1px solid rgba(255,107,53,0.3); }
-    .dropdown:hover .dropdown-content { display: block; }
-    .dropdown-content a { display: block; padding: 10px 20px; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
-    .dropdown-content a:hover { background: rgba(255,107,53,0.2); color: #ff8c42; border-radius: 12px; }
-    .phone-link { font-size: 1.1rem; font-weight: 600; background: rgba(255,107,53,0.2); border: 1px solid rgba(255,107,53,0.4); padding: 8px 18px; border-radius: 40px; text-decoration: none; color: #ff8c42; }
-    .phone-link:hover { background: rgba(255,107,53,0.4); color: white; }
-    @media (max-width: 800px) { .header-flex { flex-direction: column; } .nav-links { justify-content: center; } .dropdown-content { position: static; display: none; width: 100%; } .dropdown:hover .dropdown-content { display: block; } }
+    .header-flex { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; flex-wrap: wrap; gap: 16px; }
     
-    /* Hero Section */
+    /* Logo Styles */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-svg {
+      width: 50px;
+      height: auto;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-text .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+    .logo-text .brand span {
+      color: #ff6b35;
+    }
+    .logo-text .tagline {
+      font-size: 0.6rem;
+      color: #cbd5e1;
+      letter-spacing: 2px;
+    }
+    
+    .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: #ffffff; font-weight: 500; transition: all 0.2s; }
+    .nav-links a:hover { color: #ff6b35; }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content { display: none; position: absolute; background: #0066cc; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-radius: 16px; z-index: 1; top: 100%; left: 0; padding: 8px 0; min-width: 240px; border: 1px solid rgba(255,107,53,0.3); }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a { display: block; padding: 10px 20px; color: #ffffff; text-decoration: none; font-size: 0.9rem; }
+    .dropdown-content a:hover { background: rgba(255,107,53,0.2); color: #ff6b35; border-radius: 12px; }
+    .phone-link { font-size: 1rem; font-weight: 600; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); padding: 8px 18px; border-radius: 40px; text-decoration: none; color: #ffffff; }
+    .phone-link:hover { background: rgba(255,255,255,0.25); color: #ffffff; }
+    @media (max-width: 800px) { .header-flex { flex-direction: column; } .nav-links { justify-content: center; } .dropdown-content { position: static; display: none; width: 100%; } .dropdown:hover .dropdown-content { display: block; } .logo-svg { width: 40px; } .logo-text .brand { font-size: 1.1rem; } }
+    
+    /* Hero Section - Charcoal with texture */
     .hero { 
-      background: linear-gradient(135deg, #2d5a1e, #4a8c2a); 
+      background: #2a2a2e;
+      background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 8px);
       padding: 60px 0; 
       text-align: center;
       border-radius: 48px;
       margin: 30px 20px;
       border: 1px solid rgba(255,107,53,0.3);
     }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 16px; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 16px; color: #ff6b35; }
     .hero p { font-size: 1.2rem; color: #cbd5e1; }
     
+    /* Solution Cards - Charcoal with texture */
     .solution-grid { display: flex; flex-wrap: wrap; gap: 30px; margin: 50px 0; }
     .solution-card { 
-      background: rgba(20, 30, 45, 0.55);
-      backdrop-filter: blur(16px);
+      background: #2a2a2e;
+      background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 8px);
       border-radius: 28px; 
       padding: 30px; 
       flex: 1; 
       min-width: 280px; 
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.2s; 
+      border: 1px solid rgba(255,107,53,0.2);
+      transition: all 0.3s ease; 
       text-decoration: none; 
-      color: #e2e8f0; 
+      color: #ffffff; 
       display: block; 
     }
-    .solution-card:hover { transform: translateY(-6px); border-color: rgba(255,107,53,0.3); }
-    .solution-icon { font-size: 3rem; margin-bottom: 16px; color: #ff8c42; }
-    .solution-card h2 { margin-bottom: 12px; color: #ff8c42; }
+    .solution-card:hover { 
+      transform: translateY(-6px); 
+      border-color: rgba(255,107,53,0.5); 
+    }
+    .solution-icon { font-size: 3rem; margin-bottom: 16px; color: #ff6b35; }
+    .solution-card h2 { margin-bottom: 12px; color: #ff6b35; }
     .solution-card p { color: #cbd5e1; }
     .feature-list { list-style: none; margin-top: 20px; }
-    .feature-list li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); color: #cbd5e1; }
-    .feature-list li:before { content: "🌾 "; color: #4a8c2a; font-weight: bold; margin-right: 8px; }
+    .feature-list li { 
+      padding: 8px 0; 
+      border-bottom: 1px solid rgba(255,255,255,0.05); 
+      color: #cbd5e1; 
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-list li i { color: #0066cc; width: 20px; }
     
-    .comparison-table { width: 100%; border-collapse: collapse; background: rgba(20, 30, 45, 0.55); backdrop-filter: blur(8px); border-radius: 24px; overflow: hidden; margin: 30px 0; border: 1px solid rgba(255,255,255,0.1); }
-    .comparison-table th, .comparison-table td { padding: 16px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); color: #cbd5e1; }
-    .comparison-table th { background: rgba(255,107,53,0.15); font-weight: 600; color: #ff8c42; }
+    /* Comparison Table */
+    .comparison-table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      background: #2a2a2e;
+      background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 8px);
+      border-radius: 24px; 
+      overflow: hidden; 
+      margin: 30px 0; 
+      border: 1px solid rgba(255,107,53,0.2);
+    }
+    .comparison-table th, .comparison-table td { 
+      padding: 16px; 
+      text-align: left; 
+      border-bottom: 1px solid rgba(255,255,255,0.05); 
+      color: #cbd5e1; 
+    }
+    .comparison-table th { 
+      background: rgba(255,107,53,0.15); 
+      font-weight: 600; 
+      color: #ff6b35; 
+    }
+    .comparison-table td strong { color: #ff6b35; }
+    .comparison-table tr:last-child td { border-bottom: none; }
     
-    .footer { background: rgba(15, 26, 36, 0.8); backdrop-filter: blur(12px); color: #94a3b8; padding: 40px 0; text-align: center; margin-top: 40px; border-top: 1px solid rgba(255,107,53,0.2); }
-    .footer a { color: #ff8c42; text-decoration: none; }
-    .footer a:hover { color: #00bfff; }
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #ff6b35;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #ff6b35, #0066cc);
+      margin: 15px auto 0;
+      border-radius: 3px;
+    }
+    
+    /* CTA Box */
+    .cta-box {
+      background: #2a2a2e;
+      background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 8px);
+      border-radius: 32px;
+      padding: 50px;
+      margin: 40px 0;
+      text-align: center;
+      border: 1px solid rgba(255,107,53,0.3);
+    }
+    .cta-box h3 { 
+      font-size: 1.8rem; 
+      margin-bottom: 16px; 
+      color: #ff6b35; 
+    }
+    .cta-box p { 
+      margin-bottom: 24px; 
+      color: #cbd5e1; 
+    }
+    
+    .footer { background: #0066cc; color: #cbd5e1; padding: 40px 0; text-align: center; margin-top: 40px; }
+    .footer a { color: #ff6b35; text-decoration: none; }
+    .footer a:hover { color: #ffffff; }
     
     @media (max-width: 700px) { 
       .hero h1 { font-size: 1.8rem; } 
       .hero p { font-size: 1rem; }
       .solution-card { min-width: 100%; }
+      .section-title { font-size: 1.5rem; }
       .scroll-top { bottom: 90px; right: 20px; width: 40px; height: 40px; }
       .whatsapp-float { bottom: 20px; right: 20px; padding: 8px 16px; }
-      .chatbot-button { bottom: 20px; left: 20px; padding: 10px 16px; }
+      .comparison-table th, .comparison-table td { padding: 10px; font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -287,30 +362,47 @@
 <!-- WhatsApp Button - Right Side -->
 <a href="https://wa.me/27101234567?text=Hi%21%20I%27m%20interested%20in%20farm%20security%20solutions." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
 
-<!-- AI Assistant Button - Left Side -->
-<div class="chatbot-button" id="chatbotButton"><i class="fas fa-robot"></i> AI Assistant</div>
+<!-- AI Assistant button is created by ai-assistant.js - DO NOT add a separate button here -->
 
 <header class="header">
   <div class="container header-flex">
-    <div class="logo">evo<span>home tech</span></div>
+    <a href="index.html" class="logo-container">
+      <svg class="logo-svg" viewBox="0 0 220 140" width="50" height="50">
+        <rect x="60" y="15" width="55" height="42" rx="6" fill="none" stroke="#ff6b35" stroke-width="2.5"/>
+        <circle cx="87" cy="36" r="13" fill="none" stroke="#ff6b35" stroke-width="2"/>
+        <circle cx="87" cy="36" r="5.5" fill="#ff6b35"/>
+        <rect x="82" y="57" width="10" height="8" rx="2" fill="#ff6b35" opacity="0.4"/>
+        <g transform="translate(155, 5)">
+          <path d="M10 38 Q18 32 18 42" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M5 32 Q18 22 31 32" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+          <path d="M0 26 Q18 10 36 26" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="18" cy="44" r="3" fill="#ffffff"/>
+        </g>
+      </svg>
+      <div class="logo-text">
+        <div class="brand">NET CAM <span>SA</span></div>
+        <div class="tagline">NETWORKS &amp; CCTV</div>
+      </div>
+    </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <div class="dropdown">
         <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
         <div class="dropdown-content">
-          <a href="network.html"><i class="fas fa-network-wired"></i> Network Overview</a>
-          <a href="wifi-mesh.html"><i class="fas fa-wifi"></i> Wi-Fi Mesh</a>
+          <a href="network.html"><i class="fas fa-network-wired"></i> Network Installations</a>
+          <a href="wifi-mesh.html"><i class="fas fa-wifi"></i> Wi-Fi Mesh Installations</a>
           <a href="network-upgrade.html"><i class="fas fa-server"></i> Network Upgrades</a>
           <a href="nas.html"><i class="fas fa-database"></i> NAS Storage</a>
           <div style="height:1px; background:rgba(255,107,53,0.3); margin:8px 0;"></div>
           <a href="security.html"><i class="fas fa-shield-alt"></i> Security Overview</a>
-          <a href="cctv-intercom.html"><i class="fas fa-video"></i> CCTV & Intercom</a>
+          <a href="cctv-intercom.html"><i class="fas fa-video"></i> CCTV Installations</a>
           <a href="alarm-systems.html"><i class="fas fa-bell"></i> Alarm Systems</a>
           <div style="height:1px; background:rgba(255,107,53,0.3); margin:8px 0;"></div>
-          <a href="farms.html"><i class="fas fa-tractor"></i> Farms & Agriculture</a>
+          <a href="farms.html" style="color: #ff6b35;"><i class="fas fa-tractor"></i> Farms & Agriculture</a>
         </div>
       </div>
-      <a href="requirements.html"><i class="fas fa-clipboard-list"></i> Select My Requirements</a>
+      <a href="requirements.html"><i class="fas fa-clipboard-list"></i> Get a Quote</a>
+      <a href="gallery.html">Installation Gallery</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -325,18 +417,18 @@
   </div>
 </section>
 
-<div class="container" style="padding: 40px 0;">
+<div class="container">
   <div class="solution-grid">
     <div class="solution-card">
       <div class="solution-icon"><i class="fas fa-video"></i></div>
       <h2>Long-Range CCTV</h2>
       <p>Monitor perimeters, kraals, gates, and farm buildings – even in complete darkness.</p>
       <ul class="feature-list">
-        <li>Up to 100m night vision range</li>
-        <li>4K resolution – identify faces and vehicle number plates</li>
-        <li>Solar-powered options for remote areas</li>
-        <li>AI person/vehicle detection – reduces false alerts from animals</li>
-        <li>PTZ cameras – pan, tilt, zoom to follow movement</li>
+        <li><i class="fas fa-moon"></i> Up to 100m night vision range</li>
+        <li><i class="fas fa-4k"></i> 4K resolution – identify faces and number plates</li>
+        <li><i class="fas fa-solar-panel"></i> Solar-powered options for remote areas</li>
+        <li><i class="fas fa-brain"></i> AI person/vehicle detection – reduces false alerts from animals</li>
+        <li><i class="fas fa-sync-alt"></i> PTZ cameras – pan, tilt, zoom to follow movement</li>
       </ul>
       <a href="cctv-intercom.html" class="btn-outline" style="margin-top: 16px; display: inline-block;">Learn more <i class="fas fa-arrow-right"></i></a>
     </div>
@@ -346,12 +438,12 @@
       <h2>Farm Alarm Systems</h2>
       <p>Protect farmhouse, equipment sheds, fuel storage, and outbuildings.</p>
       <ul class="feature-list">
-        <li>Wireless sensors – no cabling across the farm</li>
-        <li>Long-range wireless (up to 2km between sensors and panel)</li>
-        <li>Mobile alerts – know instantly if a shed is breached</li>
-        <li>Solar-powered sensors for remote outbuildings</li>
-        <li>Load shedding backup – 12+ hour battery</li>
-        <li>Cellular backup – alarm works even if phone lines are cut</li>
+        <li><i class="fas fa-wifi"></i> Wireless sensors – no cabling across the farm</li>
+        <li><i class="fas fa-ruler-combined"></i> Long-range wireless (up to 2km between sensors and panel)</li>
+        <li><i class="fas fa-mobile-alt"></i> Mobile alerts – know instantly if a shed is breached</li>
+        <li><i class="fas fa-sun"></i> Solar-powered sensors for remote outbuildings</li>
+        <li><i class="fas fa-battery-full"></i> Load shedding backup – 12+ hour battery</li>
+        <li><i class="fas fa-tower-cell"></i> Cellular backup – alarm works even if phone lines are cut</li>
       </ul>
       <a href="alarm-systems.html" class="btn-outline" style="margin-top: 16px; display: inline-block;">Learn more <i class="fas fa-arrow-right"></i></a>
     </div>
@@ -361,43 +453,47 @@
       <h2>Long-Range Networking</h2>
       <p>Connect your farmhouse, cottage, sheds, and kraal – no dead zones across the property.</p>
       <ul class="feature-list">
-        <li>Point-to-point wireless bridges – up to 15km range</li>
-        <li>Connect remote cameras, gates, and sensors</li>
-        <li>Wi-Fi at the stables, workshop, or staff quarters</li>
-        <li>Solar-powered network nodes for remote areas</li>
-        <li>Secure VPN access – check cameras from anywhere</li>
+        <li><i class="fas fa-broadcast-tower"></i> Point-to-point wireless bridges – up to 15km range</li>
+        <li><i class="fas fa-video"></i> Connect remote cameras, gates, and sensors</li>
+        <li><i class="fas fa-wifi"></i> Wi-Fi at the stables, workshop, or staff quarters</li>
+        <li><i class="fas fa-solar-panel"></i> Solar-powered network nodes for remote areas</li>
+        <li><i class="fas fa-lock"></i> Secure VPN access – check cameras from anywhere</li>
       </ul>
       <a href="network.html" class="btn-outline" style="margin-top: 16px; display: inline-block;">Learn more <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 
-  <h2 style="margin: 40px 0 20px; text-align:center; color: #ff8c42;"><i class="fas fa-chart-line"></i> Farm vs Residential – What's different?</h2>
+  <h2 class="section-title"><i class="fas fa-chart-line"></i> Farm vs Residential – What's different?</h2>
   <table class="comparison-table">
-    <tr><th>Feature</th><th>Residential</th><th><strong>Farm / Agricultural</strong></th></tr>
-    <tr><td>Camera range</th><td>20-30m night vision</th><td style="background:rgba(0,191,255,0.15);"><strong>100m+ night vision, long-range zoom</strong></td></tr>
-    <tr><td>Sensor range</th><td>100m from panel</th><td style="background:rgba(0,191,255,0.15);"><strong>Up to 2km wireless sensors</strong></td></tr>
-    <tr><td>Network coverage</th><td>Within house/garden</th><td style="background:rgba(0,191,255,0.15);"><strong>Point-to-point bridges up to 15km</strong></td></tr>
-    <tr><td>Power source</th><td>Mains electricity</th><td style="background:rgba(0,191,255,0.15);"><strong>Solar + battery options for remote areas</strong></td></tr>
+    <thead>
+      <tr><th>Feature</th><th>Residential</th><th><strong>Farm / Agricultural</strong></th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Camera range</td><td>20-30m night vision</td><td><strong>100m+ night vision, long-range zoom</strong></td></tr>
+      <tr><td>Sensor range</td><td>100m from panel</td><td><strong>Up to 2km wireless sensors</strong></td></tr>
+      <tr><td>Network coverage</td><td>Within house/garden</td><td><strong>Point-to-point bridges up to 15km</strong></td></tr>
+      <tr><td>Power source</td><td>Mains electricity</td><td><strong>Solar + battery options for remote areas</strong></td></tr>
+    </tbody>
   </table>
 
-  <div style="background: linear-gradient(135deg, rgba(45,90,30,0.3), rgba(0,191,255,0.1)); backdrop-filter: blur(8px); border-radius: 32px; padding: 50px; margin: 40px 0; text-align:center; border: 1px solid rgba(45,90,30,0.5);">
-    <h3 style="font-size: 1.8rem; margin-bottom: 16px; color: #ff8c42;"><i class="fas fa-tractor"></i> Get a custom farm quote</h3>
-    <p style="margin-bottom: 24px; color: #cbd5e1;">Use our Requirements tool – select "Farm" as your property type and answer a few questions about your needs.</p>
-    <a href="requirements.html" class="btn-primary"><i class="fas fa-clipboard-list"></i> Select My Requirements →</a>
+  <div class="cta-box">
+    <h3><i class="fas fa-tractor"></i> Get a custom farm quote</h3>
+    <p>Use our Requirements tool – select "Farm" as your property type and answer a few questions about your needs.</p>
+    <a href="requirements.html" class="btn-primary"><i class="fas fa-clipboard-list"></i> Get Your Free Quote →</a>
   </div>
 </div>
 
 <footer class="footer">
   <div class="container">
-    <p>© 2025 Evo Home Tech — Network • Security • Farms | Midrand, SA</p>
-    <p><i class="fas fa-map-marker-alt"></i> 69 State Road, President Park | <a href="mailto:hello@evohometech.co.za"><i class="fas fa-envelope"></i> hello@evohometech.co.za</a></p>
+    <p>© 2025 Net Cam SA — Professional CCTV & Network Installations | Midrand, SA</p>
+    <p><i class="fas fa-map-marker-alt"></i> 69 State Road, President Park | <a href="mailto:info@netcamsa.co.za"><i class="fas fa-envelope"></i> info@netcamsa.co.za</a></p>
   </div>
 </footer>
 
 <script src="ai-assistant.js"></script>
 
 <script>
-// Particle Background
+// Particle Background - Light
 (function() {
   const canvas = document.getElementById('particleCanvas');
   const ctx = canvas.getContext('2d');
@@ -410,10 +506,10 @@
     constructor() {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
-      this.radius = 2 + Math.random() * 2.5;
-      this.baseColor = `hsl(${200 + Math.random() * 40}, 70%, 55%)`;
+      this.vx = (Math.random() - 0.5) * 0.25;
+      this.vy = (Math.random() - 0.5) * 0.25;
+      this.radius = 1.5 + Math.random() * 2.5;
+      this.baseColor = `hsl(${200 + Math.random() * 40}, 70%, 65%)`;
     }
     update() {
       this.x += this.vx; this.y += this.vy;
@@ -427,7 +523,7 @@
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
       ctx.fillStyle = this.baseColor;
       ctx.fill();
-      ctx.shadowBlur = 10;
+      ctx.shadowBlur = 8;
       ctx.shadowColor = this.baseColor;
       ctx.fill();
       ctx.shadowBlur = 0;
@@ -444,12 +540,12 @@
         const dy = particles[i].y - particles[j].y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < connectionDistance) {
-          const opacity = (1 - distance / connectionDistance) * 0.25;
+          const opacity = (1 - distance / connectionDistance) * 0.15;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(255, 140, 66, ${opacity})`;
-          ctx.lineWidth = 1;
+          ctx.strokeStyle = `rgba(0, 102, 204, ${opacity})`;
+          ctx.lineWidth = 0.8;
           ctx.stroke();
         }
       }
@@ -463,12 +559,12 @@
       const dy = particles[i].y - mouseY;
       const distance = Math.sqrt(dx * dx + dy * dy);
       if (distance < 150) {
-        const opacity = (1 - distance / 150) * 0.4;
+        const opacity = (1 - distance / 150) * 0.2;
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(mouseX, mouseY);
-        ctx.strokeStyle = `rgba(0, 191, 255, ${opacity})`;
-        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = `rgba(255, 107, 53, ${opacity})`;
+        ctx.lineWidth = 1;
         ctx.stroke();
       }
     }
@@ -477,9 +573,9 @@
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, '#0a0f1a');
-    gradient.addColorStop(0.5, '#0f172a');
-    gradient.addColorStop(1, '#1a1a2e');
+    gradient.addColorStop(0, '#f0f4f8');
+    gradient.addColorStop(0.5, '#e2e8f0');
+    gradient.addColorStop(1, '#d9e2ec');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     for (let particle of particles) { particle.update(); particle.draw(); }
@@ -488,11 +584,11 @@
     requestAnimationFrame(animate);
   }
   
-  window.addEventListener('resize', () => { resizeCanvas(); initParticles(Math.floor(window.innerWidth * window.innerHeight / 14000)); });
+  window.addEventListener('resize', () => { resizeCanvas(); initParticles(Math.floor(window.innerWidth * window.innerHeight / 20000)); });
   window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
   window.addEventListener('mouseleave', () => { mouseX = null; mouseY = null; });
   resizeCanvas();
-  initParticles(Math.floor(window.innerWidth * window.innerHeight / 14000));
+  initParticles(Math.floor(window.innerWidth * window.innerHeight / 20000));
   animate();
 })();
 
@@ -503,11 +599,7 @@ window.addEventListener('scroll', () => {
 });
 scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// AI Assistant Button
-document.getElementById('chatbotButton')?.addEventListener('click', function() {
-  const chatbotWindow = document.getElementById('chatbotWindow');
-  if (chatbotWindow) chatbotWindow.style.display = 'flex';
-});
+// Note: AI Assistant is handled by ai-assistant.js - no additional code needed here
 </script>
 </body>
 </html>
