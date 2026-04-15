@@ -1,7 +1,7 @@
 // ============================================
 // EVO HOME TECH - AI ASSISTANT
 // Shared across all pages - Single file
-// FIXED: Quick reply buttons now visible with proper colors
+// FIXED: Messages start at TOP, user scrolls down
 // ============================================
 
 (function() {
@@ -23,9 +23,7 @@
           <span>🤖 Evo AI Assistant</span>
           <button id="closeChatbot">✕</button>
         </div>
-        <div class="chatbot-messages" id="chatbotMessages">
-          <div class="message bot-message">👋 Hello! Ask me anything about our products or services.</div>
-        </div>
+        <div class="chatbot-messages" id="chatbotMessages"></div>
         <div class="quick-replies-search">
           <input type="text" id="quickSearchInput" placeholder="🔍 Filter topics...">
         </div>
@@ -199,7 +197,7 @@
           transform: scale(1.02);
         }
         
-        /* QUICK REPLIES - FIXED VISIBILITY */
+        /* QUICK REPLIES */
         .quick-replies {
           display: flex;
           flex-wrap: wrap;
@@ -211,7 +209,6 @@
           overflow-y: auto;
         }
         
-        /* Custom scrollbar for quick replies */
         .quick-replies::-webkit-scrollbar {
           width: 4px;
         }
@@ -319,7 +316,7 @@
     let welcomeShown = false;
     
     // ============================================
-    // COMPLETE FAQ DATABASE
+    // COMPLETE FAQ DATABASE (same as before)
     // ============================================
     const faq = {
       "specialize": "🔧 *What we specialize in:*\n\nWe specialize in three core areas:\n\n📡 *NETWORKING* – Wi-Fi mesh systems, full network upgrades, structured cabling, NAS storage, and point-to-point wireless bridges.\n\n📹 *SECURITY* – CCTV systems (4K, night vision, PTZ), video intercoms, and alarm systems with mobile control.\n\n🚜 *FARMS* – Long-range cameras (100m+ night vision), farm alarm sensors (up to 2km range), and point-to-point networking (up to 15km).\n\nOne company, one point of contact, integrated solutions.",
@@ -421,10 +418,14 @@
       formatted = formatted.replace(/━━━━━━━━━━━━━━━━━━━━━━/g, '<hr style="margin: 8px 0; border-color: rgba(255,255,255,0.1);">');
       div.innerHTML = formatted;
       chatbotMessages.appendChild(div);
+      // SCROLL TO BOTTOM (standard chat behavior - newest at bottom)
       chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
     
     function showWelcomeMenu() {
+      // Clear any existing messages first
+      chatbotMessages.innerHTML = '';
+      
       const welcomeMsg = `👋 *Hello! I'm Evo's AI Assistant.*
 
 *What would you like to know? Select a topic below or type your question.*
