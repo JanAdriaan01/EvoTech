@@ -1,0 +1,30 @@
+# robots.txt for Net Cam SA
+# https://netcamsa.co.za/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /includes/
+Disallow: /logs/
+
+# Disallow specific file types from being indexed
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.zip$
+
+# Allow all crawlers to access images
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://netcamsa.co.za/sitemap.xml
+
+# Crawl delay to prevent server overload (adjust as needed)
+Crawl-delay: 1
+
+# Specify the host (optional but recommended)
+Host: https://netcamsa.co.za
