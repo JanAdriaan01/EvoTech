@@ -228,7 +228,7 @@
     }
     .whatsapp-float:hover { transform: scale(1.05); background: #128C7E; }
     
-    /* Global Header Styles */
+    /* Global Header Styles - FIXED DROPDOWN */
     .global-header { 
       background: #0066cc;
       position: sticky; top: 0; z-index: 100; 
@@ -244,14 +244,68 @@
     .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
     .nav-links a { text-decoration: none; color: #ffffff; font-weight: 500; transition: all 0.2s; }
     .nav-links a:hover { color: #ff6b35; }
+    
+    /* FIXED DROPDOWN STYLES */
     .dropdown { position: relative; display: inline-block; }
-    .dropdown-content { display: none; position: absolute; background: #0066cc; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-radius: 16px; z-index: 1; top: 100%; left: 0; padding: 8px 0; min-width: 260px; border: 1px solid rgba(255,107,53,0.3); }
+    .dropdown > a { display: inline-block; cursor: pointer; }
+    .dropdown-content { 
+      display: none; 
+      position: absolute; 
+      background: #0066cc; 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
+      border-radius: 16px; 
+      z-index: 1000; 
+      top: 100%; 
+      left: 0; 
+      padding: 12px 0; 
+      min-width: 240px; 
+      border: 1px solid rgba(255,107,53,0.3);
+      white-space: nowrap;
+    }
+    /* Right-align the last dropdowns to prevent overflow */
+    .dropdown:last-child .dropdown-content,
+    .dropdown:nth-last-child(2) .dropdown-content {
+      left: auto;
+      right: 0;
+    }
     .dropdown:hover .dropdown-content { display: block; }
-    .dropdown-content a { display: block; padding: 10px 20px; color: #ffffff; text-decoration: none; font-size: 0.9rem; }
-    .dropdown-content a:hover { background: rgba(255,107,53,0.2); color: #ff6b35; border-radius: 12px; }
+    .dropdown-content a { 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+      padding: 10px 20px; 
+      color: #ffffff; 
+      text-decoration: none; 
+      font-size: 0.85rem; 
+      transition: all 0.2s; 
+      white-space: nowrap;
+    }
+    .dropdown-content a i { width: 20px; font-size: 0.9rem; color: #ff6b35; }
+    .dropdown-content a:hover { background: rgba(255,107,53,0.2); color: #ff6b35; }
+    .dropdown-content a:hover i { color: #ffffff; }
+    .dropdown-content .divider { height: 1px; background: rgba(255,107,53,0.3); margin: 8px 0; }
+    
     .phone-link { font-size: 1rem; font-weight: 600; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); padding: 8px 18px; border-radius: 40px; text-decoration: none; color: #ffffff; transition: all 0.2s; }
     .phone-link:hover { background: rgba(255,255,255,0.25); color: #ffffff; transform: scale(1.02); }
-    @media (max-width: 800px) { .header-flex { flex-direction: column; } .nav-links { justify-content: center; } .dropdown-content { position: static; display: none; width: 100%; } .dropdown:hover .dropdown-content { display: block; } }
+    
+    @media (max-width: 800px) { 
+      .header-flex { flex-direction: column; } 
+      .nav-links { justify-content: center; } 
+      .dropdown { position: relative; }
+      .dropdown-content { 
+        position: static; 
+        display: none; 
+        width: 100%; 
+        box-shadow: none; 
+        background: rgba(0,102,204,0.8);
+        margin-top: 8px;
+        border-radius: 12px;
+        white-space: normal;
+      } 
+      .dropdown:hover .dropdown-content { display: block; }
+      .dropdown-content a { white-space: normal; justify-content: center; }
+      .dropdown-content a i { width: 24px; }
+    }
     
     /* Global Footer Styles */
     .global-footer { background: #0066cc; color: #cbd5e1; padding: 40px 0; text-align: center; margin-top: 40px; }
@@ -400,7 +454,7 @@
 <div class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></div>
 <a href="https://wa.me/27754613153?text=Hi%21%20I%27m%20interested%20in%20CCTV%20and%20intercom%20for%20my%20home." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
 
-<!-- HEADER PLACEHOLDER - Loaded from components -->
+<!-- HEADER PLACEHOLDER -->
 <div id="header-placeholder"></div>
 
 <section class="hero">
@@ -473,33 +527,28 @@
   </div>
 </div>
 
-<!-- FOOTER PLACEHOLDER - Loaded from components -->
+<!-- FOOTER PLACEHOLDER -->
 <div id="footer-placeholder"></div>
 
 <script src="ai-assistant.js"></script>
 
 <script>
 // ========== LOAD HEADER AND FOOTER FROM EXTERNAL COMPONENTS ==========
-// IMPORTANT: This requires running on a web server (http:// or https://)
-// It will NOT work when opening the file directly (file://)
-
 async function loadComponent(elementId, filePath) {
   try {
     const response = await fetch(filePath);
     if (response.ok) {
       const html = await response.text();
       document.getElementById(elementId).innerHTML = html;
-      console.log(`✅ Loaded ${filePath} successfully`);
+      console.log(`✅ Loaded ${filePath}`);
     } else {
       console.error(`❌ Failed to load ${filePath}: ${response.status}`);
-      // Fallback: show error in console only
     }
   } catch (error) {
     console.error(`❌ Error loading ${filePath}:`, error);
   }
 }
 
-// Load header and footer from components folder
 loadComponent('header-placeholder', 'components/header.html');
 loadComponent('footer-placeholder', 'components/footer.html');
 
