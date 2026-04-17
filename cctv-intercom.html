@@ -152,7 +152,7 @@
     }
     
     body { 
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; 
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; 
       background: transparent; 
       color: #1a2c3e; 
       line-height: 1.5; 
@@ -228,84 +228,26 @@
     }
     .whatsapp-float:hover { transform: scale(1.05); background: #128C7E; }
     
-    /* Global Header Styles - FIXED DROPDOWN */
+    /* Global Header Styles - MATCHING INDEX PAGE */
     .global-header { 
       background: #0066cc;
       position: sticky; top: 0; z-index: 100; 
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .header-flex { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; flex-wrap: wrap; gap: 16px; }
-    .logo { font-size: 1.6rem; font-weight: 700; color: #ffffff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .logo svg { width: 50px; height: auto; }
-    .logo-text { display: flex; flex-direction: column; }
-    .logo-text .brand { font-size: 1.4rem; font-weight: 700; color: #ffffff; letter-spacing: 1px; }
-    .logo-text .brand span { color: #ff6b35; }
-    .logo-text .tagline { font-size: 0.6rem; color: #cbd5e1; letter-spacing: 2px; }
+    .logo { font-size: 1.6rem; font-weight: 700; color: #ffffff; text-decoration: none; }
+    .logo span { font-weight: 400; font-size: 0.7rem; color: #cbd5e1; display: block; letter-spacing: 1px; }
     .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
     .nav-links a { text-decoration: none; color: #ffffff; font-weight: 500; transition: all 0.2s; }
     .nav-links a:hover { color: #ff6b35; }
-    
-    /* FIXED DROPDOWN STYLES */
     .dropdown { position: relative; display: inline-block; }
-    .dropdown > a { display: inline-block; cursor: pointer; }
-    .dropdown-content { 
-      display: none; 
-      position: absolute; 
-      background: #0066cc; 
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
-      border-radius: 16px; 
-      z-index: 1000; 
-      top: 100%; 
-      left: 0; 
-      padding: 12px 0; 
-      min-width: 240px; 
-      border: 1px solid rgba(255,107,53,0.3);
-      white-space: nowrap;
-    }
-    /* Right-align the last dropdowns to prevent overflow */
-    .dropdown:last-child .dropdown-content,
-    .dropdown:nth-last-child(2) .dropdown-content {
-      left: auto;
-      right: 0;
-    }
+    .dropdown-content { display: none; position: absolute; background: #0066cc; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-radius: 16px; z-index: 1000; top: 100%; left: 0; padding: 8px 0; min-width: 260px; border: 1px solid rgba(255,107,53,0.3); }
     .dropdown:hover .dropdown-content { display: block; }
-    .dropdown-content a { 
-      display: flex; 
-      align-items: center; 
-      gap: 12px; 
-      padding: 10px 20px; 
-      color: #ffffff; 
-      text-decoration: none; 
-      font-size: 0.85rem; 
-      transition: all 0.2s; 
-      white-space: nowrap;
-    }
-    .dropdown-content a i { width: 20px; font-size: 0.9rem; color: #ff6b35; }
-    .dropdown-content a:hover { background: rgba(255,107,53,0.2); color: #ff6b35; }
-    .dropdown-content a:hover i { color: #ffffff; }
-    .dropdown-content .divider { height: 1px; background: rgba(255,107,53,0.3); margin: 8px 0; }
-    
+    .dropdown-content a { display: block; padding: 10px 20px; color: #ffffff; text-decoration: none; font-size: 0.9rem; }
+    .dropdown-content a:hover { background: rgba(255,107,53,0.2); color: #ff6b35; border-radius: 12px; }
     .phone-link { font-size: 1rem; font-weight: 600; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); padding: 8px 18px; border-radius: 40px; text-decoration: none; color: #ffffff; transition: all 0.2s; }
     .phone-link:hover { background: rgba(255,255,255,0.25); color: #ffffff; transform: scale(1.02); }
-    
-    @media (max-width: 800px) { 
-      .header-flex { flex-direction: column; } 
-      .nav-links { justify-content: center; } 
-      .dropdown { position: relative; }
-      .dropdown-content { 
-        position: static; 
-        display: none; 
-        width: 100%; 
-        box-shadow: none; 
-        background: rgba(0,102,204,0.8);
-        margin-top: 8px;
-        border-radius: 12px;
-        white-space: normal;
-      } 
-      .dropdown:hover .dropdown-content { display: block; }
-      .dropdown-content a { white-space: normal; justify-content: center; }
-      .dropdown-content a i { width: 24px; }
-    }
+    @media (max-width: 800px) { .header-flex { flex-direction: column; } .nav-links { justify-content: center; } .dropdown-content { position: static; display: none; width: 100%; } .dropdown:hover .dropdown-content { display: block; } }
     
     /* Global Footer Styles */
     .global-footer { background: #0066cc; color: #cbd5e1; padding: 40px 0; text-align: center; margin-top: 40px; }
@@ -313,6 +255,7 @@
     .global-footer a:hover { color: #ffffff; }
     .global-footer p { margin: 8px 0; }
     
+    /* Hero Section */
     .hero { 
       background: linear-gradient(135deg, #1a2c3e 0%, #0f1a24 100%);
       padding: 60px 0; 
@@ -363,6 +306,25 @@
     }
     .video-note code { background: rgba(0,0,0,0.1); padding: 2px 6px; border-radius: 6px; }
     
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin: 50px 0 30px;
+      color: #1a2c3e;
+      position: relative;
+    }
+    .section-title i { color: #ff6b35; margin-right: 12px; }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #ff6b35, #0066cc);
+      margin: 15px auto 0;
+      border-radius: 3px;
+    }
+    
+    /* Feature Grid - White Cards */
     .feature-grid { display: flex; flex-wrap: wrap; gap: 24px; margin: 40px 0; }
     .feature-card { 
       background: white; 
@@ -381,6 +343,7 @@
     .feature-card .price { font-weight: 700; color: #ff6b35; margin-top: 10px; font-size: 1.2rem; }
     .feature-card .warranty { font-size: 0.75rem; color: #718096; margin-top: 8px; }
     
+    /* Benefits List */
     .benefits-list { 
       list-style: none; 
       padding: 0; 
@@ -402,24 +365,7 @@
     .benefits-list li:last-child { border-bottom: none; }
     .benefits-list li i { color: #0066cc; width: 24px; }
     
-    .section-title {
-      font-size: 2rem;
-      text-align: center;
-      margin: 40px 0 20px;
-      color: #1a2c3e;
-      position: relative;
-    }
-    .section-title i { color: #ff6b35; margin-right: 12px; }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #ff6b35, #0066cc);
-      margin: 15px auto 0;
-      border-radius: 3px;
-    }
-    
+    /* CTA Box */
     .cta-box {
       background: linear-gradient(135deg, #0066cc, #004999);
       border-radius: 32px;
@@ -433,13 +379,28 @@
     .cta-box .btn-primary { background: #ff6b35; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
     .cta-box .btn-primary:hover { background: #e55a2b; }
     
+    /* Service Areas */
+    .service-areas-footer {
+      background: #1a2c3e;
+      border-radius: 24px;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .service-areas-footer h3 { color: #ff6b35; margin-bottom: 20px; }
+    .area-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .area-tags span { background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 30px; color: #cbd5e1; font-size: 0.85rem; transition: all 0.2s; }
+    .area-tags span:hover { background: #ff6b35; color: white; }
+    
     @media (max-width: 700px) { 
       .hero h1 { font-size: 1.8rem; } 
       .hero p { font-size: 1rem; }
       .feature-card { min-width: 100%; }
       .section-title { font-size: 1.5rem; }
       .scroll-top { bottom: 90px; right: 20px; width: 40px; height: 40px; }
-      .whatsapp-float { bottom: 20px; right: 20px; padding: 8px 16px; }
+      .whatsapp-float { bottom: 20px; right: 20px; padding: 8px 16px; font-size: 0.85rem; }
+      .cta-box { padding: 30px 20px; }
+      .cta-box h3 { font-size: 1.2rem; }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -454,9 +415,10 @@
 <div class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></div>
 <a href="https://wa.me/27754613153?text=Hi%21%20I%27m%20interested%20in%20CCTV%20and%20intercom%20for%20my%20home." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
 
-<!-- HEADER PLACEHOLDER -->
+<!-- HEADER PLACEHOLDER - Loaded from components -->
 <div id="header-placeholder"></div>
 
+<!-- HERO SECTION -->
 <section class="hero">
   <div class="container">
     <h1><i class="fas fa-video"></i> Integrated CCTV & Intercom</h1>
@@ -507,16 +469,28 @@
     <li><i class="fas fa-mobile-alt"></i> App setup on all family phones (up to 10 devices)</li>
     <li><i class="fas fa-tv"></i> Indoor panel configuration and training</li>
     <li><i class="fas fa-hdd"></i> 30-day recording storage (on NVR or NAS)</li>
-    <li><i class="fas fa-chalkboard-teacher"></i> 1-hour training session</li>
+    <li><i class="fas fa-chalkboard-user"></i> 1-hour training session</li>
   </ul>
 
   <!-- Pricing Guide -->
-  <h2 class="section-title"><i class="fas fa-tag"></i> Pricing guide</h2>
+  <h2 class="section-title"><i class="fas fa-tag"></i> Transparent Pricing - No Hidden Fees</h2>
   <div class="feature-grid">
     <div class="feature-card"><h3><i class="fas fa-camera"></i> Basic CCTV</h3><p>4 cameras + NVR + phone app</p><div class="price">From R6,500 installed</div><div class="warranty"><i class="fas fa-check-circle"></i> 5-year hardware warranty</div></div>
     <div class="feature-card"><h3><i class="fas fa-door-open"></i> Intercom Only</h3><p>Gate intercom + indoor panel + phone app</p><div class="price">From R4,500 installed</div><div class="warranty"><i class="fas fa-check-circle"></i> 5-year hardware warranty</div></div>
     <div class="feature-card"><h3><i class="fas fa-home"></i> Family System</h3><p>6 cameras + NVR + indoor panel + intercom</p><div class="price">From R12,500 installed</div><div class="warranty"><i class="fas fa-check-circle"></i> 5-year hardware warranty</div></div>
     <div class="feature-card"><h3><i class="fas fa-crown"></i> Premium System</h3><p>8 cameras + NVR + 2 panels + AI detection</p><div class="price">From R18,500 installed</div><div class="warranty"><i class="fas fa-check-circle"></i> 5-year hardware warranty</div></div>
+  </div>
+
+  <!-- Service Areas -->
+  <div class="service-areas-footer">
+    <h3><i class="fas fa-map-marker-alt"></i> We Serve All Gauteng</h3>
+    <div class="area-tags">
+      <span>Midrand</span><span>Kyalami</span><span>Waterfall</span><span>Vorna Valley</span>
+      <span>Crowthorne</span><span>Centurion</span><span>Pretoria</span><span>Johannesburg</span>
+      <span>Sandton</span><span>Fourways</span><span>Randburg</span><span>Roodepoort</span>
+      <span>Kempton Park</span><span>Boksburg</span><span>Benoni</span><span>Germiston</span>
+      <span>Alberton</span><span>Eldoraigne</span><span>Menlyn</span><span>Brooklyn</span>
+    </div>
   </div>
 
   <!-- CTA Box -->
@@ -527,7 +501,7 @@
   </div>
 </div>
 
-<!-- FOOTER PLACEHOLDER -->
+<!-- FOOTER PLACEHOLDER - Loaded from components -->
 <div id="footer-placeholder"></div>
 
 <script src="ai-assistant.js"></script>
