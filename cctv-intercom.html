@@ -400,71 +400,8 @@
 <div class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></div>
 <a href="https://wa.me/27754613153?text=Hi%21%20I%27m%20interested%20in%20CCTV%20and%20intercom%20for%20my%20home." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
 
-<!-- HEADER - Embedded directly (will be moved to component file later) -->
-<header class="global-header">
-  <div class="container header-flex">
-    <a href="index.html" class="logo">
-      <svg viewBox="0 0 220 140" width="50" height="50">
-        <rect x="60" y="15" width="55" height="42" rx="6" fill="none" stroke="#ff6b35" stroke-width="2.5"/>
-        <circle cx="87" cy="36" r="13" fill="none" stroke="#ff6b35" stroke-width="2"/>
-        <circle cx="87" cy="36" r="5.5" fill="#ff6b35"/>
-        <rect x="82" y="57" width="10" height="8" rx="2" fill="#ff6b35" opacity="0.4"/>
-        <g transform="translate(155, 5)">
-          <path d="M10 38 Q18 32 18 42" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M5 32 Q18 22 31 32" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
-          <path d="M0 26 Q18 10 36 26" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
-          <circle cx="18" cy="44" r="3" fill="#ffffff"/>
-        </g>
-      </svg>
-      <div class="logo-text">
-        <div class="brand">NET CAM <span>SA</span></div>
-        <div class="tagline">NETWORKS &amp; CCTV</div>
-      </div>
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      
-      <div class="dropdown">
-        <a href="#">CCTV <i class="fas fa-chevron-down"></i></a>
-        <div class="dropdown-content">
-          <a href="cctv-intercom.html"><i class="fas fa-video"></i> CCTV & Intercom</a>
-          <a href="ip-camera-systems.html"><i class="fas fa-camera"></i> IP Camera Systems</a>
-          <a href="solar-cctv.html"><i class="fas fa-solar-panel"></i> Solar CCTV</a>
-          <a href="ptz-cameras.html"><i class="fas fa-sync-alt"></i> PTZ Cameras</a>
-          <a href="coax-cctv.html"><i class="fas fa-cable-car"></i> Coax / TVI CCTV</a>
-          <a href="self-monitoring-cctv.html"><i class="fas fa-mobile-alt"></i> Self Monitoring</a>
-        </div>
-      </div>
-      
-      <div class="dropdown">
-        <a href="#">Networking <i class="fas fa-chevron-down"></i></a>
-        <div class="dropdown-content">
-          <a href="network.html"><i class="fas fa-network-wired"></i> Network Solutions</a>
-          <a href="wifi-mesh.html"><i class="fas fa-wifi"></i> Wi-Fi Mesh</a>
-          <a href="network-upgrade.html"><i class="fas fa-server"></i> Network Upgrades</a>
-          <a href="network-cabling.html"><i class="fas fa-plug"></i> Network Cabling</a>
-          <a href="fibre-links-for-cctv.html"><i class="fas fa-fiber"></i> Fibre Links</a>
-          <a href="unmanaged-network.html"><i class="fas fa-router"></i> Routers & Switches</a>
-        </div>
-      </div>
-      
-      <div class="dropdown">
-        <a href="#">More <i class="fas fa-chevron-down"></i></a>
-        <div class="dropdown-content">
-          <a href="nas.html"><i class="fas fa-database"></i> NAS Storage</a>
-          <a href="alarm-systems.html"><i class="fas fa-bell"></i> Alarm Systems</a>
-          <a href="farms.html"><i class="fas fa-tractor"></i> Farms & Agriculture</a>
-        </div>
-      </div>
-      
-      <a href="requirements.html"><i class="fas fa-clipboard-list"></i> Get a Quote</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <a href="tel:+27754613153" class="phone-link"><i class="fas fa-phone-alt"></i> 075 461 3153</a>
-  </div>
-</header>
+<!-- HEADER PLACEHOLDER - Loaded from components -->
+<div id="header-placeholder"></div>
 
 <section class="hero">
   <div class="container">
@@ -536,18 +473,36 @@
   </div>
 </div>
 
-<!-- FOOTER - Embedded directly (will be moved to component file later) -->
-<footer class="global-footer">
-  <div class="container">
-    <p>© 2025 Net Cam SA — Professional CCTV & Network Installations | Midrand, Gauteng</p>
-    <p><i class="fas fa-map-marker-alt"></i> 69 State Road, President Park, Midrand | <a href="mailto:info@netcamsa.co.za"><i class="fas fa-envelope"></i> info@netcamsa.co.za</a></p>
-    <p><i class="fas fa-phone-alt"></i> <a href="tel:0754613153">075 461 3153</a> | <i class="fab fa-whatsapp"></i> <a href="https://wa.me/27754613153">WhatsApp Us</a></p>
-    <p>Serving: Midrand, Kyalami, Waterfall, Vorna Valley, Crowthorne, Centurion, Pretoria, Johannesburg, and all Gauteng</p>
-    <p style="font-size: 0.8rem; margin-top: 15px;">Transparent pricing - no hidden fees | 5-year warranty on all installations | Self monitoring options available</p>
-  </div>
-</footer>
+<!-- FOOTER PLACEHOLDER - Loaded from components -->
+<div id="footer-placeholder"></div>
+
+<script src="ai-assistant.js"></script>
 
 <script>
+// ========== LOAD HEADER AND FOOTER FROM EXTERNAL COMPONENTS ==========
+// IMPORTANT: This requires running on a web server (http:// or https://)
+// It will NOT work when opening the file directly (file://)
+
+async function loadComponent(elementId, filePath) {
+  try {
+    const response = await fetch(filePath);
+    if (response.ok) {
+      const html = await response.text();
+      document.getElementById(elementId).innerHTML = html;
+      console.log(`✅ Loaded ${filePath} successfully`);
+    } else {
+      console.error(`❌ Failed to load ${filePath}: ${response.status}`);
+      // Fallback: show error in console only
+    }
+  } catch (error) {
+    console.error(`❌ Error loading ${filePath}:`, error);
+  }
+}
+
+// Load header and footer from components folder
+loadComponent('header-placeholder', 'components/header.html');
+loadComponent('footer-placeholder', 'components/footer.html');
+
 // ========== PARTICLE BACKGROUND ==========
 (function() {
   const canvas = document.getElementById('particleCanvas');
