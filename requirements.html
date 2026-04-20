@@ -3,8 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Select My Requirements | Net Cam SA</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Primary Meta Tags - Comprehensive SEO for Requirements -->
+  <title>Get a Quote |  My Requirements | Net Cam SA | Gauteng</title>
+  <meta name="description" content="Get a free, no-obligation quote for CCTV and network installations in Gauteng. Tell us about your property and needs. Residential, small office, agricultural. Call 075 461 3153.">
+  <meta name="keywords" content="free quote cctv, free quote network, cctv installation quote, network installation quote, residential quote, small office quote, agricultural quote, get a quote, requirements, Midrand, Centurion, Pretoria, Johannesburg, Gauteng">
+  <meta name="author" content="Net Cam SA">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+  <!-- Geo and Local Business Tags -->
+  <meta name="geo.region" content="ZA-GP">
+  <meta name="geo.placename" content="Gauteng">
+  <meta name="geo.position" content="-25.963;28.132">
+  <meta name="ICBM" content="-25.963, 28.132">
+  <meta name="areaServed" content="Midrand, Kyalami, Waterfall, Vorna Valley, Crowthorne, Centurion, Pretoria, Johannesburg, Sandton, Fourways, Randburg, Roodepoort, Kempton Park, Boksburg, Benoni, Germiston, Alberton">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://netcamsa.co.za/requirements.html">
+  <meta property="og:title" content="Get a Free Quote | Select My Requirements | Net Cam SA">
+  <meta property="og:description" content="Get a free, no-obligation quote for CCTV and network installations. Tell us about your property and needs.">
+  <meta property="og:image" content="https://netcamsa.co.za/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Get a Free Quote | Net Cam SA">
+  <meta name="twitter:description" content="Get a free, no-obligation quote for CCTV and network installations.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://netcamsa.co.za/requirements.html">
+  
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Net Cam SA",
+    "description": "Get a free quote for professional CCTV and network installations in Gauteng.",
+    "image": "https://netcamsa.co.za/images/logo.png",
+    "telephone": "+27754613153",
+    "email": "info@netcamsa.co.za",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "69 State Road, President Park",
+      "addressLocality": "Midrand",
+      "addressRegion": "Gauteng",
+      "postalCode": "1685",
+      "addressCountry": "ZA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-25.963",
+      "longitude": "28.132"
+    },
+    "openingHours": "Mo-Fr 08:00-17:00, Sa 09:00-13:00",
+    "priceRange": "R"
+  }
+  </script>
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -204,7 +260,65 @@
       border: 1px solid rgba(0,102,204,0.1);
     }
     
-    /* Property Type Cards - White with subtle shadow */
+    /* Action Buttons Container */
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .btn-copy, .btn-email {
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      border: none;
+    }
+    .btn-copy {
+      background: #0066cc;
+      color: white;
+    }
+    .btn-copy:hover {
+      background: #004999;
+      transform: translateY(-2px);
+    }
+    .btn-email {
+      background: #ff6b35;
+      color: white;
+    }
+    .btn-email:hover {
+      background: #e55a2b;
+      transform: translateY(-2px);
+    }
+    .copy-success {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #10b981;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      z-index: 1001;
+      display: none;
+      animation: fadeInOut 2s ease;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+      15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    }
+    
     .property-selector {
       display: flex;
       flex-wrap: wrap;
@@ -230,7 +344,6 @@
     .property-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; color: #1a2c3e; }
     .property-desc { font-size: 0.8rem; color: #718096; }
     
-    /* Size Options */
     .size-options {
       display: flex;
       flex-wrap: wrap;
@@ -249,7 +362,6 @@
     .size-btn:hover { border-color: #ff6b35; background: rgba(255,107,53,0.05); }
     .size-btn.selected { background: rgba(255,107,53,0.15); border-color: #ff6b35; color: #1a2c3e; }
     
-    /* Category Selector */
     .category-selector {
       display: flex;
       flex-wrap: wrap;
@@ -368,55 +480,29 @@
     .location-btn:hover { border-color: #ff6b35; background: rgba(255,107,53,0.05); }
     .location-btn.selected { background: rgba(255,107,53,0.15); border-color: #ff6b35; color: #1a2c3e; }
     
-    .nav-buttons { display: flex; justify-content: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
-    .btn-submit {
-      padding: 14px 40px;
-      border-radius: 40px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      border: none;
-      background: #0066cc;
-      color: white;
-      font-size: 1.1rem;
+    .summary-box {
+      background: #f7fafc;
+      border-radius: 20px;
+      padding: 25px;
+      margin-top: 30px;
+      border: 1px solid #e2e8f0;
     }
-    .btn-submit:hover { transform: translateY(-2px); background: #004999; box-shadow: 0 8px 25px rgba(0,102,204,0.4); }
-    
-    .success-container {
-      background: white;
-      border-radius: 48px;
-      padding: 60px 40px;
-      margin: 40px 0;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,102,204,0.1);
-      animation: fadeInUp 0.6s ease;
+    .summary-box h3 {
+      color: #0066cc;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .success-icon { font-size: 5rem; color: #0066cc; margin-bottom: 20px; }
-    .success-title { font-size: 2rem; color: #ff6b35; margin-bottom: 20px; }
-    .btn-new-request { 
-      margin-top: 20px; 
-      padding: 12px 28px; 
-      background: #0066cc; 
-      color: white; 
-      border: none; 
-      border-radius: 40px; 
-      cursor: pointer; 
-      font-weight: 600;
-    }
-    .btn-new-request:hover { background: #004999; transform: translateY(-2px); }
-    .error-message {
-      background: rgba(255,107,53,0.1);
-      border-left: 4px solid #ff6b35;
-      padding: 12px 16px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      color: #ff6b35;
+    .summary-content {
+      font-family: monospace;
       font-size: 0.85rem;
+      white-space: pre-wrap;
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      max-height: 300px;
+      overflow-y: auto;
+      color: #2d3748;
     }
     
     @media (max-width: 700px) {
@@ -426,8 +512,11 @@
       .level-card { min-width: 100%; }
       .scroll-top { bottom: 90px; right: 20px; width: 40px; height: 40px; }
       .whatsapp-float { bottom: 20px; right: 20px; padding: 8px 16px; }
+      .action-buttons { flex-direction: column; }
+      .btn-copy, .btn-email { justify-content: center; }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -524,16 +613,21 @@
       <div class="form-group"><label class="form-label">Additional notes</label><textarea id="specialNotes" rows="3" placeholder="Special requirements, preferred dates, etc."></textarea></div>
     </div>
     
-    <div class="nav-buttons"><button type="button" class="btn-submit" id="submitBtn">Submit Requirements <i class="fas fa-paper-plane"></i></button></div>
+    <!-- Summary Box -->
+    <div class="summary-box" id="summaryBox" style="display: none;">
+      <h3><i class="fas fa-file-alt"></i> Your Requirements Summary</h3>
+      <div class="summary-content" id="summaryContent"></div>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="action-buttons" id="actionButtons" style="display: none;">
+      <button class="btn-copy" id="copyBtn"><i class="fas fa-copy"></i> Copy to Clipboard</button>
+      <button class="btn-email" id="emailBtn"><i class="fas fa-envelope"></i> Send via Email</button>
+    </div>
   </div>
   
-  <div id="successContainer" style="display: none;">
-    <div class="success-container">
-      <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-      <h2 class="success-title">Submission Successful! ✅</h2>
-      <div class="success-message"><p>Thank you for sharing your requirements.</p><p style="margin-top:15px"><strong>We are on it right now!</strong></p><p style="margin-top:15px; color:#0066cc;">📱 Expect WhatsApp communication within <strong>1 hour</strong> (7am-5pm).</p></div>
-      <div><button class="btn-new-request" onclick="location.reload()"><i class="fas fa-plus-circle"></i> Submit Another Request</button></div>
-    </div>
+  <div id="copySuccessMessage" class="copy-success">
+    <i class="fas fa-check-circle"></i> Copied to clipboard! You can now paste into an email.
   </div>
 </div>
 
@@ -543,7 +637,7 @@
 <script src="ai-assistant.js"></script>
 
 <script>
-// Load header and footer from components
+// ========== LOAD HEADER AND FOOTER FROM EXTERNAL COMPONENTS ==========
 async function loadComponent(elementId, filePath) {
   try {
     const response = await fetch(filePath);
@@ -559,7 +653,7 @@ async function loadComponent(elementId, filePath) {
 loadComponent('header-placeholder', 'components/header.html');
 loadComponent('footer-placeholder', 'components/footer.html');
 
-// Particle Background
+// ========== PARTICLE BACKGROUND ==========
 (function(){const c=document.getElementById('particleCanvas'),ctx=c.getContext('2d');let p=[];function resize(){c.width=innerWidth;c.height=innerHeight}class P{constructor(){this.x=Math.random()*c.width,this.y=Math.random()*c.height,this.vx=(Math.random()-.5)*.25,this.vy=(Math.random()-.5)*.25,this.r=1.5+Math.random()*2.5,this.col=`hsl(${200+Math.random()*40},70%,65%)`}update(){this.x+=this.vx,this.y+=this.vy,this.x<-50?this.x=c.width+50:this.x>c.width+50&&(this.x=-50),this.y<-50?this.y=c.height+50:this.y>c.height+50&&(this.y=-50)}draw(){ctx.beginPath(),ctx.arc(this.x,this.y,this.r,0,Math.PI*2),ctx.fillStyle=this.col,ctx.fill(),ctx.shadowBlur=8,ctx.shadowColor=this.col,ctx.fill(),ctx.shadowBlur=0}}function init(cnt){p=[];for(let i=0;i<cnt;i++)p.push(new P)}function draw(){ctx.clearRect(0,0,c.width,c.height);let grad=ctx.createLinearGradient(0,0,c.width,c.height);grad.addColorStop(0,'#f0f4f8'),grad.addColorStop(.5,'#e2e8f0'),grad.addColorStop(1,'#d9e2ec'),ctx.fillStyle=grad,ctx.fillRect(0,0,c.width,c.height);for(let a of p)a.update(),a.draw();requestAnimationFrame(draw)}addEventListener('resize',()=>{resize();init(Math.floor(innerWidth*innerHeight/20000))}),resize(),init(Math.floor(innerWidth*innerHeight/20000)),draw()})();
 
 // Scroll to Top
@@ -602,6 +696,7 @@ function renderSizeOptions() {
       document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
       this.classList.add('selected');
       selectedSize = this.dataset.size;
+      updateSummary();
     });
   });
 }
@@ -618,6 +713,7 @@ document.querySelectorAll('.property-card').forEach(card => {
     document.getElementById('solutionsSection').style.display = 'block';
     document.getElementById('techExpertSection').style.display = 'block';
     document.getElementById('contactSection').style.display = 'block';
+    updateSummary();
   });
 });
 
@@ -629,6 +725,7 @@ document.querySelectorAll('.category-card').forEach(card => {
     if (selectedCategories[cat]) card.classList.add('selected');
     else card.classList.remove('selected');
     renderCategorySections();
+    updateSummary();
   });
 });
 
@@ -672,6 +769,7 @@ function renderCategorySections() {
     </div>`;
   }
   container.innerHTML = html;
+  
   // Re-attach level card listeners
   document.querySelectorAll('.level-card').forEach(card => {
     card.addEventListener('click', function() {
@@ -680,8 +778,10 @@ function renderCategorySections() {
       this.classList.add('selected');
       const hidden = this.parentElement.querySelector('input[type="hidden"]');
       if (hidden) hidden.value = this.dataset.level;
+      updateSummary();
     });
   });
+  
   // Re-attach radio/checkbox styling
   document.querySelectorAll('.radio-option, .checkbox-option').forEach(opt => {
     const input = opt.querySelector('input');
@@ -695,9 +795,16 @@ function renderCategorySections() {
           if (this.checked) opt.classList.add('selected');
           else opt.classList.remove('selected');
         }
+        updateSummary();
       });
     }
   });
+  
+  // Re-attach select change listeners
+  const entryPoints = document.getElementById('entryPoints');
+  if (entryPoints) {
+    entryPoints.addEventListener('change', updateSummary);
+  }
 }
 
 // Tech expert toggle
@@ -705,6 +812,7 @@ const techToggle = document.getElementById('techExpertToggle');
 const customBox = document.getElementById('customRequirementsBox');
 techToggle.addEventListener('change', () => {
   customBox.style.display = techToggle.checked ? 'block' : 'none';
+  updateSummary();
 });
 
 // Location selection
@@ -715,79 +823,167 @@ document.querySelectorAll('#locationGrid .location-btn').forEach(btn => {
     this.classList.add('selected');
     selectedLocation = this.dataset.location;
     document.getElementById('otherLocation').style.display = selectedLocation === 'Other' ? 'block' : 'none';
+    updateSummary();
   });
 });
 
-// Submit handler
-document.getElementById('submitBtn').addEventListener('click', () => {
-  const name = document.getElementById('customerName').value.trim();
-  const phone = document.getElementById('customerPhone').value.trim();
-  if (!name) { showError('Please enter your full name.'); return; }
-  if (!phone) { showError('Please enter your contact number.'); return; }
-  if (!selectedLocation) { showError('Please select your location.'); return; }
-  if (!selectedProperty) { showError('Please select your property type.'); return; }
-  if (!selectedSize) { showError('Please select your property size.'); return; }
-  
-  let location = selectedLocation === 'Other' ? document.getElementById('otherLocation').value.trim() : selectedLocation;
-  if (selectedLocation === 'Other' && !location) { showError('Please specify your location.'); return; }
+// Add input listeners for contact fields
+const customerName = document.getElementById('customerName');
+const customerPhone = document.getElementById('customerPhone');
+const customerEmail = document.getElementById('customerEmail');
+const specialNotes = document.getElementById('specialNotes');
+const otherLocation = document.getElementById('otherLocation');
+
+if (customerName) customerName.addEventListener('input', updateSummary);
+if (customerPhone) customerPhone.addEventListener('input', updateSummary);
+if (customerEmail) customerEmail.addEventListener('input', updateSummary);
+if (specialNotes) specialNotes.addEventListener('input', updateSummary);
+if (otherLocation) otherLocation.addEventListener('input', updateSummary);
+
+// Update summary function
+function updateSummary() {
+  // Check if all required steps are complete
+  if (!selectedProperty || !selectedSize) return;
   
   const isTechExpert = techToggle.checked;
   const categories = Object.keys(selectedCategories).filter(c => selectedCategories[c]);
-  if (!isTechExpert && categories.length === 0) { showError('Please select at least one solution (Network, CCTV, or Alarm).'); return; }
+  if (!isTechExpert && categories.length === 0) return;
   
-  let submission = {
-    timestamp: new Date().toISOString(),
-    propertyType: selectedProperty,
-    propertySize: selectedSize,
-    isTechExpert: isTechExpert,
-    categories: categories,
-    location: location,
-    customerName: name,
-    customerPhone: phone,
-    customerEmail: document.getElementById('customerEmail').value,
-    specialNotes: document.getElementById('specialNotes').value
-  };
+  const name = customerName?.value.trim() || '';
+  const phone = customerPhone?.value.trim() || '';
+  if (!name || !phone) return;
+  
+  let location = selectedLocation === 'Other' ? (otherLocation?.value.trim() || '') : selectedLocation;
+  if (!location) return;
+  
+  // Build summary text
+  let summary = `NET CAM SA - REQUIREMENTS SUMMARY\n`;
+  summary += `================================\n\n`;
+  summary += `DATE: ${new Date().toLocaleString()}\n\n`;
+  
+  summary += `--- CUSTOMER DETAILS ---\n`;
+  summary += `Name: ${name}\n`;
+  summary += `Phone: ${phone}\n`;
+  summary += `Email: ${customerEmail?.value || 'Not provided'}\n`;
+  summary += `Location: ${location}\n\n`;
+  
+  summary += `--- PROPERTY DETAILS ---\n`;
+  summary += `Property Type: ${selectedProperty === 'house' ? 'House / Residential' : selectedProperty === 'farm' ? 'Farm / Agricultural' : 'Small Business / Office'}\n`;
+  summary += `Property Size: ${selectedSize}\n\n`;
+  
+  summary += `--- SOLUTIONS INTERESTED IN ---\n`;
+  summary += `${categories.map(c => `• ${c.toUpperCase()}`).join('\n')}\n\n`;
   
   if (isTechExpert) {
-    submission.customRequirements = document.getElementById('customRequirements').value;
+    const customReq = document.getElementById('customRequirements')?.value || '';
+    summary += `--- TECH EXPERT REQUIREMENTS ---\n`;
+    summary += `${customReq || 'No specific requirements provided'}\n\n`;
   } else {
+    // Network details
     if (selectedCategories.network) {
-      submission.peopleCount = document.querySelector('input[name="peopleCount"]:checked')?.value || '';
-      submission.internetUse = Array.from(document.querySelectorAll('#internetUseGroup input:checked')).map(c => c.value);
-      submission.wifiCoverage = Array.from(document.querySelectorAll('#wifiCoverageGroup input:checked')).map(c => c.value);
-      submission.existingCabling = document.querySelector('input[name="existingCabling"]:checked')?.value || '';
-      submission.wifiLevel = document.getElementById('wifiLevel')?.value || '';
+      summary += `--- NETWORK & WI-FI DETAILS ---\n`;
+      const peopleCount = document.querySelector('input[name="peopleCount"]:checked')?.value || 'Not specified';
+      const internetUse = Array.from(document.querySelectorAll('#internetUseGroup input:checked')).map(c => c.value);
+      const wifiCoverage = Array.from(document.querySelectorAll('#wifiCoverageGroup input:checked')).map(c => c.value);
+      const existingCabling = document.querySelector('input[name="existingCabling"]:checked')?.value || 'Not specified';
+      const wifiLevel = document.getElementById('wifiLevel')?.value || 'Not specified';
+      summary += `People Count: ${peopleCount}\n`;
+      summary += `Internet Use: ${internetUse.join(', ') || 'Not specified'}\n`;
+      summary += `Wi-Fi Coverage: ${wifiCoverage.join(', ') || 'Not specified'}\n`;
+      summary += `Existing Cabling: ${existingCabling}\n`;
+      summary += `Wi-Fi Level: ${wifiLevel}\n\n`;
     }
+    
+    // CCTV details
     if (selectedCategories.cctv) {
-      submission.cameraAreas = Array.from(document.querySelectorAll('#cameraAreasGroup input:checked')).map(c => c.value);
-      submission.nightVision = document.querySelector('input[name="nightVision"]:checked')?.value || '';
-      submission.doorbell = document.querySelector('input[name="doorbell"]:checked')?.value || '';
-      submission.cctvLevel = document.getElementById('cctvLevel')?.value || '';
+      summary += `--- SECURITY & CCTV DETAILS ---\n`;
+      const cameraAreas = Array.from(document.querySelectorAll('#cameraAreasGroup input:checked')).map(c => c.value);
+      const nightVision = document.querySelector('input[name="nightVision"]:checked')?.value || 'Not specified';
+      const doorbell = document.querySelector('input[name="doorbell"]:checked')?.value || 'Not specified';
+      const cctvLevel = document.getElementById('cctvLevel')?.value || 'Not specified';
+      summary += `Areas to Monitor: ${cameraAreas.join(', ') || 'Not specified'}\n`;
+      summary += `Night Vision Quality: ${nightVision}\n`;
+      summary += `Video Doorbell/Intercom: ${doorbell}\n`;
+      summary += `Security Level: ${cctvLevel}\n\n`;
     }
+    
+    // Alarm details
     if (selectedCategories.alarm) {
-      submission.entryPoints = document.getElementById('entryPoints')?.value || '';
-      submission.motionSensors = document.querySelector('input[name="motionSensors"]:checked')?.value || '';
-      submission.mobileControl = document.querySelector('input[name="mobileControl"]:checked')?.value || '';
-      submission.loadShedding = document.querySelector('input[name="loadShedding"]:checked')?.value || '';
-      submission.alarmLevel = document.getElementById('alarmLevel')?.value || '';
+      summary += `--- ALARM & SAFETY DETAILS ---\n`;
+      const entryPoints = document.getElementById('entryPoints')?.value || 'Not specified';
+      const motionSensors = document.querySelector('input[name="motionSensors"]:checked')?.value || 'Not specified';
+      const mobileControl = document.querySelector('input[name="mobileControl"]:checked')?.value || 'Not specified';
+      const loadShedding = document.querySelector('input[name="loadShedding"]:checked')?.value || 'Not specified';
+      const alarmLevel = document.getElementById('alarmLevel')?.value || 'Not specified';
+      summary += `Entry Points: ${entryPoints}\n`;
+      summary += `Motion Sensors: ${motionSensors}\n`;
+      summary += `Mobile Control: ${mobileControl}\n`;
+      summary += `Load Shedding Backup: ${loadShedding}\n`;
+      summary += `Alarm Level: ${alarmLevel}\n\n`;
     }
   }
   
-  let submissions = JSON.parse(localStorage.getItem('netcam_requirements_submissions') || '[]');
-  submissions.push(submission);
-  localStorage.setItem('netcam_requirements_submissions', JSON.stringify(submissions));
+  const notes = specialNotes?.value || '';
+  if (notes) {
+    summary += `--- ADDITIONAL NOTES ---\n`;
+    summary += `${notes}\n\n`;
+  }
   
-  document.getElementById('formContainer').style.display = 'none';
-  document.getElementById('successContainer').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  summary += `--- ACTION REQUIRED ---\n`;
+  summary += `Please contact customer within 1 hour.\n`;
+  summary += `WhatsApp: https://wa.me/${phone.replace(/\D/g, '')}\n`;
+  
+  // Display summary
+  const summaryContent = document.getElementById('summaryContent');
+  const summaryBox = document.getElementById('summaryBox');
+  const actionButtons = document.getElementById('actionButtons');
+  
+  if (summaryContent) {
+    summaryContent.textContent = summary;
+    summaryBox.style.display = 'block';
+    actionButtons.style.display = 'flex';
+  }
+}
+
+// Copy to clipboard
+document.getElementById('copyBtn')?.addEventListener('click', async () => {
+  const summaryContent = document.getElementById('summaryContent');
+  if (!summaryContent) return;
+  
+  try {
+    await navigator.clipboard.writeText(summaryContent.textContent);
+    const successMsg = document.getElementById('copySuccessMessage');
+    successMsg.style.display = 'block';
+    setTimeout(() => {
+      successMsg.style.display = 'none';
+    }, 2000);
+  } catch (err) {
+    alert('Failed to copy. Please manually copy the text.');
+  }
 });
 
-function showError(msg) {
-  const err = document.getElementById('errorDisplay');
-  err.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${msg}`;
-  err.style.display = 'block';
-  setTimeout(() => err.style.display = 'none', 4000);
+// Send via email (opens default email client)
+document.getElementById('emailBtn')?.addEventListener('click', () => {
+  const summaryContent = document.getElementById('summaryContent');
+  if (!summaryContent) return;
+  
+  const subject = encodeURIComponent(`Quote Request - ${customerName?.value || 'Customer'}`);
+  const body = encodeURIComponent(summaryContent.textContent);
+  const emailAddress = 'info@netcamsa.co.za';
+  
+  window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+});
+
+// Initial setup for input listeners
+function setupInputListeners() {
+  const inputs = ['customerName', 'customerPhone', 'customerEmail', 'specialNotes', 'otherLocation'];
+  inputs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', updateSummary);
+  });
 }
+
+setupInputListeners();
 </script>
 </body>
 </html>
