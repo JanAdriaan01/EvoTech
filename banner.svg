@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#004999;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#002266;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e55a2b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+
+  <!-- Decorative pattern -->
+  <g opacity="0.04">
+    <circle cx="200" cy="200" r="300" fill="#ffffff"/>
+    <circle cx="1400" cy="700" r="350" fill="#ffffff"/>
+    <circle cx="800" cy="450" r="450" fill="#ffffff"/>
+  </g>
+
+  <!-- Camera Icon - Left -->
+  <g transform="translate(120, 280)">
+    <rect x="40" y="30" width="160" height="115" rx="18" fill="none" stroke="#ff6b35" stroke-width="7"/>
+    <circle cx="120" cy="87" r="40" fill="none" stroke="#ff6b35" stroke-width="5.5"/>
+    <circle cx="120" cy="87" r="16" fill="#ff6b35"/>
+    <circle cx="114" cy="81" r="5" fill="#ffffff" opacity="0.6"/>
+    <rect x="105" y="145" width="30" height="12" rx="4" fill="#ff6b35" opacity="0.5"/>
+  </g>
+
+  <!-- Wi-Fi Signal - Right -->
+  <g transform="translate(1150, 240)">
+    <path d="M50 150 Q70 135 70 165" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M32 130 Q70 110 108 130" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+    <path d="M20 110 Q70 80 120 110" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.4"/>
+    <circle cx="70" cy="175" r="9" fill="#ffffff"/>
+  </g>
+
+  <!-- Main Title -->
+  <text x="800" y="420" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="100" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="8">
+    NET CAM SA
+  </text>
+
+  <!-- Underline -->
+  <rect x="500" y="455" width="600" height="5" rx="2.5" fill="url(#orangeGrad)"/>
+
+  <!-- Tagline -->
+  <text x="800" y="520" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="38" fill="#cbd5e1" text-anchor="middle" letter-spacing="5" font-weight="500">
+    NETWORKS &amp; CCTV INSTALLATIONS
+  </text>
+
+  <!-- Services Row -->
+  <g transform="translate(0, 580)">
+    <rect x="200" y="20" width="220" height="50" rx="25" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.6"/>
+    <text x="310" y="52" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="500">
+      📡 Wi-Fi Mesh
+    </text>
+
+    <rect x="450" y="20" width="220" height="50" rx="25" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.6"/>
+    <text x="560" y="52" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="500">
+      📹 CCTV
+    </text>
+
+    <rect x="700" y="20" width="220" height="50" rx="25" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.6"/>
+    <text x="810" y="52" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="500">
+      🔔 Alarms
+    </text>
+
+    <rect x="950" y="20" width="220" height="50" rx="25" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.6"/>
+    <text x="1060" y="52" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="500">
+      💾 NAS Storage
+    </text>
+  </g>
+
+  <!-- Contact Bar -->
+  <g transform="translate(0, 700)">
+    <rect x="200" y="0" width="1200" height="60" rx="10" fill="#ffffff" opacity="0.08"/>
+    <text x="400" y="38" font-family="'Segoe UI', Arial, sans-serif" font-size="22" fill="#ff6b35" text-anchor="middle">
+      📞 075 461 3153
+    </text>
+    <text x="800" y="38" font-family="'Segoe UI', Arial, sans-serif" font-size="22" fill="#ff6b35" text-anchor="middle">
+      ✉️ info@netcamsa.co.za
+    </text>
+    <text x="1200" y="38" font-family="'Segoe UI', Arial, sans-serif" font-size="22" fill="#ff6b35" text-anchor="middle">
+      📍 Midrand, Gauteng
+    </text>
+  </g>
+
+  <!-- WhatsApp Badge -->
+  <g transform="translate(1400, 800)">
+    <circle cx="60" cy="60" r="60" fill="#25D366"/>
+    <path d="M85 40 L50 75 L35 60" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="800" y="845" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" letter-spacing="2" opacity="0.8">
+    Available on WhatsApp Business
+  </text>
+
+  <!-- Bottom border accent -->
+  <rect x="0" y="880" width="1600" height="20" fill="url(#orangeGrad)"/>
+</svg>

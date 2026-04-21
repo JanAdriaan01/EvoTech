@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#004999;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066cc;stop-opacity:1" />
+    </linearGradient>
+    <clipPath id="circleClip">
+      <circle cx="250" cy="250" r="240" />
+    </clipPath>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="250" cy="250" r="245" fill="url(#bgGrad)" stroke="url(#ringGrad)" stroke-width="8"/>
+  
+  <!-- Inner decorative ring -->
+  <circle cx="250" cy="250" r="220" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.15"/>
+  <circle cx="250" cy="250" r="200" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.1"/>
+
+  <!-- Camera Icon -->
+  <g transform="translate(125, 100)">
+    <!-- Camera Body -->
+    <rect x="40" y="30" width="110" height="80" rx="12" fill="none" stroke="#ff6b35" stroke-width="6"/>
+    <!-- Camera Lens -->
+    <circle cx="95" cy="70" r="28" fill="none" stroke="#ff6b35" stroke-width="5"/>
+    <circle cx="95" cy="70" r="12" fill="#ff6b35"/>
+    <circle cx="91" cy="66" r="4" fill="#ffffff" opacity="0.6"/>
+    <!-- Flash -->
+    <circle cx="58" cy="45" r="5" fill="#ff6b35" opacity="0.8"/>
+    <circle cx="132" cy="45" r="5" fill="#ff6b35" opacity="0.8"/>
+    <!-- Camera Base -->
+    <rect x="85" y="110" width="20" height="12" rx="3" fill="#ff6b35" opacity="0.5"/>
+  </g>
+
+  <!-- Wi-Fi Signal Icon -->
+  <g transform="translate(300, 85)">
+    <path d="M25 75 Q38 65 38 85" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M15 65 Q38 48 61 65" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    <path d="M8 55 Q38 32 68 55" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+    <circle cx="38" cy="88" r="6" fill="#ffffff"/>
+  </g>
+
+  <!-- Text: NET CAM SA -->
+  <text x="250" y="360" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="52" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="4">
+    NET CAM
+  </text>
+  <text x="250" y="420" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="52" font-weight="800" fill="#ff6b35" text-anchor="middle" letter-spacing="4">
+    SA
+  </text>
+
+  <!-- Tagline arc -->
+  <path id="taglineArc" d="M 60 460 A 230 230 0 0 1 440 460" fill="none"/>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#cbd5e1" font-weight="500" letter-spacing="3">
+    <textPath href="#taglineArc" startOffset="50%" text-anchor="middle">
+      NETWORKS &amp; CCTV INSTALLATIONS
+    </textPath>
+  </text>
+</svg>
