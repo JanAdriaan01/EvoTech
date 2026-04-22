@@ -792,6 +792,8 @@ document.querySelectorAll('#locationGrid .location-btn').forEach(btn => {
 });
 
 // ========== SUBMIT TO API ==========
+// The fetch URL matches the handler filename: /api/send-requirements
+// Handler file: api/send-requirements.js
 const submitBtn = document.getElementById('submitBtn');
 submitBtn.addEventListener('click', async () => {
   const name = document.getElementById('customerName').value.trim();
@@ -856,6 +858,7 @@ submitBtn.addEventListener('click', async () => {
   submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
   
   try {
+    // This URL matches the handler file: api/send-requirements.js
     const response = await fetch('/api/send-requirements', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
