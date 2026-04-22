@@ -1,5 +1,11 @@
 {
+  "name": "net-cam-sa",
+  "version": "1.0.0",
+  "type": "module",
   "dependencies": {
-    "resend": "^6.12.2"
+    "resend": "^3.0.0"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
