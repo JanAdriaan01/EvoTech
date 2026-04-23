@@ -8,14 +8,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const SENDER_EMAIL = 'info@netcamsa.co.za';
 const SENDER_NAME = 'Net Cam SA';
 
-// Internal recipients - Add your Gmail here temporarily if domain email not receiving yet
-// Option 1: Use domain email (requires mailbox at DataKeepers)
-// Option 2: Use Gmail (works immediately)
-const INTERNAL_RECIPIENTS = [
-  'sales@netcamsa.co.za',     // Requires mailbox at DataKeepers
-  'info@netcamsa.co.za',      // Requires mailbox at DataKeepers
-  // 'your-personal-gmail@gmail.com'  // Uncomment this line and add your Gmail for testing
-];
+// INTERNAL RECIPIENT - ALWAYS send to sales@netcamsa.co.za (HARDCODED)
+// The customer email is ONLY for their confirmation email
+const INTERNAL_RECIPIENT = 'sales@netcamsa.co.za';
 
 module.exports = async function handler(req, res) {
   // Handle preflight OPTIONS request (for CORS)
@@ -156,7 +151,7 @@ module.exports = async function handler(req, res) {
       }
     }
 
-    // Email HTML content for internal team
+    // Email HTML content for internal team (ALWAYS sent to sales@netcamsa.co.za)
     const emailHtml = `
       <!DOCTYPE html>
       <html>
@@ -219,29 +214,27 @@ module.exports = async function handler(req, res) {
       </html>
     `;
 
-    // Send to ALL internal recipients (sales@ and info@)
-    const internalResults = [];
-    for (const recipient of INTERNAL_RECIPIENTS) {
-      try {
-        const result = await resend.emails.send({
-          from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-          to: [recipient],
-          replyTo: data.customerEmail,
-          subject: `🔔 NEW QUOTE REQUEST from ${data.customerName}`,
-          html: emailHtml
-        });
-        internalResults.push({ recipient, success: true, id: result?.id });
-        console.log(`✅ Email sent to ${recipient}:`, result?.id);
-      } catch (err) {
-        internalResults.push({ recipient, success: false, error: err.message });
-        console.log(`❌ Failed to send to ${recipient}:`, err.message);
-      }
-    }
+    // ============================================================
+    // EMAIL 1: ALWAYS send to sales@netcamsa.co.za (HARDCODED)
+    // This email goes to your sales team regardless of customer input
+    // ============================================================
+    const internalResult = await resend.emails.send({
+      from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
+      to: [INTERNAL_RECIPIENT],  // HARDCODED: sales@netcamsa.co.za
+      replyTo: data.customerEmail,
+      subject: `🔔 NEW QUOTE REQUEST from ${data.customerName}`,
+      html: emailHtml
+    });
 
-    // Send confirmation email to customer
+    console.log('✅ Email sent to sales@netcamsa.co.za:', internalResult?.id);
+
+    // ============================================================
+    // EMAIL 2: Send confirmation to the customer (their email)
+    // This email goes to the person who submitted the form
+    // ============================================================
     const customerResult = await resend.emails.send({
       from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-      to: [data.customerEmail],
+      to: [data.customerEmail],  // Customer's email from the form
       subject: 'We received your request - Net Cam SA',
       html: `
         <!DOCTYPE html>
@@ -282,13 +275,13 @@ module.exports = async function handler(req, res) {
       `
     });
 
-    console.log('Customer email sent successfully:', customerResult?.id);
+    console.log('✅ Confirmation sent to customer:', customerResult?.id);
     console.log('=== Quote Request Processed Successfully ===');
 
     return res.status(200).json({ 
       success: true, 
       message: 'Emails sent successfully',
-      internalResults: internalResults,
+      internalEmailId: internalResult?.id,
       customerEmailId: customerResult?.id
     });
     
