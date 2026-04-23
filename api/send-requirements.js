@@ -1,3 +1,4 @@
+// api/send-requirements.js
 const { Resend } = require('resend');
 
 // Initialize Resend with API key from environment variables
@@ -7,8 +8,14 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const SENDER_EMAIL = 'info@netcamsa.co.za';
 const SENDER_NAME = 'Net Cam SA';
 
-// Internal recipient for quote requests
-const INTERNAL_RECIPIENT = 'sales@netcamsa.co.za';
+// Internal recipients - Add your Gmail here temporarily if domain email not receiving yet
+// Option 1: Use domain email (requires mailbox at DataKeepers)
+// Option 2: Use Gmail (works immediately)
+const INTERNAL_RECIPIENTS = [
+  'sales@netcamsa.co.za',     // Requires mailbox at DataKeepers
+  'info@netcamsa.co.za',      // Requires mailbox at DataKeepers
+  // 'your-personal-gmail@gmail.com'  // Uncomment this line and add your Gmail for testing
+];
 
 module.exports = async function handler(req, res) {
   // Handle preflight OPTIONS request (for CORS)
@@ -85,22 +92,27 @@ module.exports = async function handler(req, res) {
 
     // Build special notes section
     const specialNotesSection = data.specialNotes ? `
-      <p><strong>📝 Special Notes:</strong></p>
-      <p style="background: #f4f4f4; padding: 10px; border-radius: 5px;">${data.specialNotes.replace(/\n/g, '<br>')}</p>
+      <div class="info-box">
+        <p><strong>📝 Special Notes:</strong></p>
+        <p style="background: #f4f4f4; padding: 10px; border-radius: 5px;">${data.specialNotes.replace(/\n/g, '<br>')}</p>
+      </div>
     ` : '';
 
     // Build tech expert section
     let techExpertSection = '';
     if (data.isTechExpert) {
       techExpertSection = `
-        <p><strong>🔧 Tech Expert Mode:</strong> Yes</p>
-        <p><strong>⚙️ Custom Requirements:</strong></p>
-        <p style="background: #f4f4f4; padding: 10px; border-radius: 5px;">${data.customRequirements || 'No custom requirements provided'}</p>
+        <div class="info-box">
+          <p><strong>🔧 Tech Expert Mode:</strong> Yes</p>
+          <p><strong>⚙️ Custom Requirements:</strong></p>
+          <p style="background: #f4f4f4; padding: 10px; border-radius: 5px;">${data.customRequirements || 'No custom requirements provided'}</p>
+        </div>
       `;
     } else {
+      let detailsHtml = '';
       // Network details
       if (data.categories?.includes('network')) {
-        techExpertSection += `
+        detailsHtml += `
           <p><strong>📡 Network & Wi-Fi Details:</strong></p>
           <ul>
             <li>People Count: ${data.peopleCount || 'Not specified'}</li>
@@ -114,7 +126,7 @@ module.exports = async function handler(req, res) {
       
       // CCTV details
       if (data.categories?.includes('cctv')) {
-        techExpertSection += `
+        detailsHtml += `
           <p><strong>🎥 Security & CCTV Details:</strong></p>
           <ul>
             <li>Areas to Monitor: ${data.cameraAreas?.join(', ') || 'Not specified'}</li>
@@ -127,7 +139,7 @@ module.exports = async function handler(req, res) {
       
       // Alarm details
       if (data.categories?.includes('alarm')) {
-        techExpertSection += `
+        detailsHtml += `
           <p><strong>🔔 Alarm & Safety Details:</strong></p>
           <ul>
             <li>Entry Points: ${data.entryPoints || 'Not specified'}</li>
@@ -138,81 +150,93 @@ module.exports = async function handler(req, res) {
           </ul>
         `;
       }
+      
+      if (detailsHtml) {
+        techExpertSection = `<div class="info-box">${detailsHtml}</div>`;
+      }
     }
 
-    // Send email to internal team (sales@netcamsa.co.za)
-    const internalResult = await resend.emails.send({
-      from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-      to: [INTERNAL_RECIPIENT],
-      replyTo: data.customerEmail,
-      subject: `🔔 NEW QUOTE REQUEST from ${data.customerName}`,
-      html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <title>New Quote Request</title>
-          <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: #ff6b35; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
-            .content { background: #f9f9f9; padding: 20px; border-radius: 0 0 10px 10px; }
-            .info-box { background: white; padding: 15px; margin: 10px 0; border-left: 4px solid #0066cc; border-radius: 5px; }
-            .label { font-weight: bold; color: #0066cc; }
-            hr { border: none; border-top: 1px solid #ddd; margin: 20px 0; }
-            .footer { text-align: center; font-size: 12px; color: #666; margin-top: 20px; }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h2>🔔 NEW QUOTE REQUEST</h2>
-              <p>Action Required Within 1 Hour</p>
+    // Email HTML content for internal team
+    const emailHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>New Quote Request</title>
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: #ff6b35; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+          .content { background: #f9f9f9; padding: 20px; border-radius: 0 0 10px 10px; }
+          .info-box { background: white; padding: 15px; margin: 10px 0; border-left: 4px solid #0066cc; border-radius: 5px; }
+          .label { font-weight: bold; color: #0066cc; }
+          hr { border: none; border-top: 1px solid #ddd; margin: 20px 0; }
+          .footer { text-align: center; font-size: 12px; color: #666; margin-top: 20px; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h2>🔔 NEW QUOTE REQUEST</h2>
+            <p>Action Required Within 1 Hour</p>
+          </div>
+          <div class="content">
+            <div class="info-box">
+              <h3 style="color: #0066cc; margin-bottom: 15px;">👤 Customer Details</h3>
+              <p><span class="label">Name:</span> ${data.customerName}</p>
+              <p><span class="label">Phone:</span> ${data.customerPhone}</p>
+              <p><span class="label">Email:</span> ${data.customerEmail}</p>
+              <p><span class="label">Timestamp:</span> ${new Date(data.timestamp).toLocaleString()}</p>
             </div>
-            <div class="content">
-              <div class="info-box">
-                <h3 style="color: #0066cc; margin-bottom: 15px;">👤 Customer Details</h3>
-                <p><span class="label">Name:</span> ${data.customerName}</p>
-                <p><span class="label">Phone:</span> ${data.customerPhone}</p>
-                <p><span class="label">Email:</span> ${data.customerEmail}</p>
-                <p><span class="label">Timestamp:</span> ${new Date(data.timestamp).toLocaleString()}</p>
-              </div>
-              
-              <div class="info-box">
-                <h3 style="color: #0066cc; margin-bottom: 15px;">🏠 Property Details</h3>
-                <p><span class="label">Property Type:</span> ${propertyTypeDisplay}</p>
-                <p><span class="label">Property Size:</span> ${propertySizeDisplay}</p>
-                <p><span class="label">Location:</span> ${data.location}</p>
-                <p><span class="label">Solutions Interested In:</span> ${categoriesList}</p>
-              </div>
-              
-              <div class="info-box">
-                <h3 style="color: #0066cc; margin-bottom: 15px;">📋 Requirements Details</h3>
-                ${techExpertSection}
-              </div>
-              
-              ${specialNotesSection}
-              
-              <hr>
-              
-              <div class="info-box">
-                <h3 style="color: #0066cc; margin-bottom: 15px;">✅ Action Required</h3>
-                <p>📞 Call customer within <strong>1 hour</strong> (7am-5pm weekdays)</p>
-                <p>💬 <a href="https://wa.me/${data.customerPhone.replace(/\D/g, '')}" style="color: #25D366;">Click to WhatsApp Customer</a></p>
-                <p>📧 Reply to: <a href="mailto:${data.customerEmail}">${data.customerEmail}</a></p>
-              </div>
+            
+            <div class="info-box">
+              <h3 style="color: #0066cc; margin-bottom: 15px;">🏠 Property Details</h3>
+              <p><span class="label">Property Type:</span> ${propertyTypeDisplay}</p>
+              <p><span class="label">Property Size:</span> ${propertySizeDisplay}</p>
+              <p><span class="label">Location:</span> ${data.location}</p>
+              <p><span class="label">Solutions Interested In:</span> ${categoriesList}</p>
             </div>
-            <div class="footer">
-              <p>Net Cam SA — Professional CCTV & Network Installations</p>
-              <p>69 State Road, President Park, Midrand</p>
+            
+            ${techExpertSection}
+            
+            ${specialNotesSection}
+            
+            <hr>
+            
+            <div class="info-box">
+              <h3 style="color: #0066cc; margin-bottom: 15px;">✅ Action Required</h3>
+              <p>📞 Call customer within <strong>1 hour</strong> (7am-5pm weekdays)</p>
+              <p>💬 <a href="https://wa.me/${data.customerPhone.replace(/\D/g, '')}" style="color: #25D366;">Click to WhatsApp Customer</a></p>
+              <p>📧 Reply to: <a href="mailto:${data.customerEmail}">${data.customerEmail}</a></p>
             </div>
           </div>
-        </body>
-        </html>
-      `
-    });
+          <div class="footer">
+            <p>Net Cam SA — Professional CCTV & Network Installations</p>
+            <p>69 State Road, President Park, Midrand</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
 
-    console.log('Internal email sent successfully to sales@netcamsa.co.za:', internalResult?.id);
+    // Send to ALL internal recipients (sales@ and info@)
+    const internalResults = [];
+    for (const recipient of INTERNAL_RECIPIENTS) {
+      try {
+        const result = await resend.emails.send({
+          from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
+          to: [recipient],
+          replyTo: data.customerEmail,
+          subject: `🔔 NEW QUOTE REQUEST from ${data.customerName}`,
+          html: emailHtml
+        });
+        internalResults.push({ recipient, success: true, id: result?.id });
+        console.log(`✅ Email sent to ${recipient}:`, result?.id);
+      } catch (err) {
+        internalResults.push({ recipient, success: false, error: err.message });
+        console.log(`❌ Failed to send to ${recipient}:`, err.message);
+      }
+    }
 
     // Send confirmation email to customer
     const customerResult = await resend.emails.send({
@@ -264,7 +288,7 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ 
       success: true, 
       message: 'Emails sent successfully',
-      internalEmailId: internalResult?.id,
+      internalResults: internalResults,
       customerEmailId: customerResult?.id
     });
     
