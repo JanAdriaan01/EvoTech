@@ -7,6 +7,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const SENDER_EMAIL = 'info@netcamsa.co.za';
 const SENDER_NAME = 'Net Cam SA';
 
+// Internal recipient for quote requests
+const INTERNAL_RECIPIENT = 'sales@netcamsa.co.za';
+
 module.exports = async function handler(req, res) {
   // Handle preflight OPTIONS request (for CORS)
   if (req.method === 'OPTIONS') {
@@ -137,10 +140,10 @@ module.exports = async function handler(req, res) {
       }
     }
 
-    // Send email to admin (info@netcamsa.co.za) - using your domain
-    const adminResult = await resend.emails.send({
+    // Send email to internal team (sales@netcamsa.co.za)
+    const internalResult = await resend.emails.send({
       from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-      to: ['info@netcamsa.co.za'],
+      to: [INTERNAL_RECIPIENT],
       replyTo: data.customerEmail,
       subject: `🔔 NEW QUOTE REQUEST from ${data.customerName}`,
       html: `
@@ -209,9 +212,9 @@ module.exports = async function handler(req, res) {
       `
     });
 
-    console.log('Admin email sent successfully:', adminResult?.id);
+    console.log('Internal email sent successfully to sales@netcamsa.co.za:', internalResult?.id);
 
-    // Send confirmation email to customer - also from info@netcamsa.co.za
+    // Send confirmation email to customer
     const customerResult = await resend.emails.send({
       from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
       to: [data.customerEmail],
@@ -227,7 +230,6 @@ module.exports = async function handler(req, res) {
             .container { max-width: 500px; margin: 0 auto; padding: 20px; }
             .header { background: #0066cc; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
             .content { background: #f9f9f9; padding: 20px; border-radius: 0 0 10px 10px; }
-            .button { background: #ff6b35; color: white; padding: 12px 25px; text-decoration: none; border-radius: 30px; display: inline-block; margin: 10px 0; }
             .footer { text-align: center; font-size: 12px; color: #666; margin-top: 20px; }
           </style>
         </head>
@@ -241,7 +243,7 @@ module.exports = async function handler(req, res) {
               
               <p>You can also reach us directly:</p>
               <p>📞 <strong>075 461 3153</strong></p>
-              <p>💬 <a href="https://wa.me/27754613153" style="color: #25D366; text-decoration: none; font-weight: bold;">WhatsApp Us</a></p>
+              <p>💬 <strong><a href="https://wa.me/27754613153" style="color: #25D366; text-decoration: none;">WhatsApp Us</a></strong></p>
               
               <hr>
               <p style="font-size: 12px; color: #666;">Your reference: ${data.timestamp?.substring(0, 10) || new Date().toISOString().substring(0, 10)}</p>
@@ -262,7 +264,7 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ 
       success: true, 
       message: 'Emails sent successfully',
-      adminEmailId: adminResult?.id,
+      internalEmailId: internalResult?.id,
       customerEmailId: customerResult?.id
     });
     
