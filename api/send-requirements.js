@@ -3,6 +3,10 @@ const { Resend } = require('resend');
 // Initialize Resend with API key from environment variables
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Sender email address (must be verified in Resend dashboard)
+const SENDER_EMAIL = 'info@netcamsa.co.za';
+const SENDER_NAME = 'Net Cam SA';
+
 module.exports = async function handler(req, res) {
   // Handle preflight OPTIONS request (for CORS)
   if (req.method === 'OPTIONS') {
@@ -133,10 +137,11 @@ module.exports = async function handler(req, res) {
       }
     }
 
-    // Send email to admin (info@netcamsa.co.za)
+    // Send email to admin (info@netcamsa.co.za) - using your domain
     const adminResult = await resend.emails.send({
-      from: 'Net Cam SA <onboarding@resend.dev>',
+      from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
       to: ['info@netcamsa.co.za'],
+      replyTo: data.customerEmail,
       subject: `🔔 NEW QUOTE REQUEST from ${data.customerName}`,
       html: `
         <!DOCTYPE html>
@@ -206,9 +211,9 @@ module.exports = async function handler(req, res) {
 
     console.log('Admin email sent successfully:', adminResult?.id);
 
-    // Send confirmation email to customer
+    // Send confirmation email to customer - also from info@netcamsa.co.za
     const customerResult = await resend.emails.send({
-      from: 'Net Cam SA <onboarding@resend.dev>',
+      from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
       to: [data.customerEmail],
       subject: 'We received your request - Net Cam SA',
       html: `
@@ -236,7 +241,7 @@ module.exports = async function handler(req, res) {
               
               <p>You can also reach us directly:</p>
               <p>📞 <strong>075 461 3153</strong></p>
-              <p>💬 <a href="https://wa.me/27754613153" class="button" style="color: white; background: #25D366; padding: 10px 20px; text-decoration: none; border-radius: 30px; display: inline-block;">WhatsApp Us</a></p>
+              <p>💬 <a href="https://wa.me/27754613153" style="color: #25D366; text-decoration: none; font-weight: bold;">WhatsApp Us</a></p>
               
               <hr>
               <p style="font-size: 12px; color: #666;">Your reference: ${data.timestamp?.substring(0, 10) || new Date().toISOString().substring(0, 10)}</p>
