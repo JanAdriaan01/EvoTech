@@ -1,0 +1,76 @@
+// submit-to-google.js
+// Run this script to ping Google about all your pages
+
+const https = require('https');
+
+// List of all your pages
+const pages = [
+  'https://netcamsa.co.za/',
+  'https://netcamsa.co.za/index.html',
+  'https://netcamsa.co.za/cctv-intercom.html',
+  'https://netcamsa.co.za/ip-camera-systems.html',
+  'https://netcamsa.co.za/solar-cctv.html',
+  'https://netcamsa.co.za/ptz-cameras.html',
+  'https://netcamsa.co.za/coax-cctv.html',
+  'https://netcamsa.co.za/self-monitoring-cctv.html',
+  'https://netcamsa.co.za/alarm-systems.html',
+  'https://netcamsa.co.za/network.html',
+  'https://netcamsa.co.za/wifi-mesh.html',
+  'https://netcamsa.co.za/network-upgrade.html',
+  'https://netcamsa.co.za/network-cabling.html',
+  'https://netcamsa.co.za/fibre-links-for-cctv.html',
+  'https://netcamsa.co.za/unmanaged-network.html',
+  'https://netcamsa.co.za/nas.html',
+  'https://netcamsa.co.za/farms.html',
+  'https://netcamsa.co.za/about.html',
+  'https://netcamsa.co.za/contact.html',
+  'https://netcamsa.co.za/gallery.html',
+  'https://netcamsa.co.za/requirements.html',
+  'https://netcamsa.co.za/security.html'
+];
+
+// Ping Google about each page
+function pingGoogle(url) {
+  return new Promise((resolve) => {
+    const googleUrl = `https://www.google.com/ping?sitemap=${encodeURIComponent(url)}`;
+    
+    https.get(googleUrl, (res) => {
+      console.log(`✅ Pinged: ${url} - Status: ${res.statusCode}`);
+      resolve();
+    }).on('error', (err) => {
+      console.log(`❌ Failed: ${url} - Error: ${err.message}`);
+      resolve();
+    });
+  });
+}
+
+// Also ping Bing
+function pingBing(url) {
+  return new Promise((resolve) => {
+    const bingUrl = `https://www.bing.com/ping?sitemap=${encodeURIComponent(url)}`;
+    
+    https.get(bingUrl, (res) => {
+      console.log(`✅ Bing pinged: ${url} - Status: ${res.statusCode}`);
+      resolve();
+    }).on('error', (err) => {
+      console.log(`❌ Bing failed: ${url} - Error: ${err.message}`);
+      resolve();
+    });
+  });
+}
+
+// Run for all pages
+async function submitAll() {
+  console.log('🚀 Submitting all pages to Google and Bing...\n');
+  
+  for (const page of pages) {
+    await pingGoogle(page);
+    await new Promise(resolve => setTimeout(resolve, 500)); // Wait 0.5 seconds between pings
+    await pingBing(page);
+    await new Promise(resolve => setTimeout(resolve, 500));
+  }
+  
+  console.log('\n✅ All pages submitted!');
+}
+
+submitAll();
