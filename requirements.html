@@ -551,13 +551,12 @@
       <div class="size-options" id="sizeOptions"></div>
     </div>
     
-    <!-- STEP 3: Solutions Needed -->
+    <!-- STEP 3: Solutions Needed (Alarm REMOVED) -->
     <div id="solutionsSection" style="display: none;">
       <h2 class="section-title"><i class="fas fa-microchip"></i> Step 3: Which solutions are you interested in?</h2>
       <div class="category-selector" id="categorySelector">
         <div class="category-card" data-category="network"><div class="category-icon"><i class="fas fa-wifi"></i></div><div class="category-title">Network & Wi-Fi</div></div>
         <div class="category-card" data-category="cctv"><div class="category-icon"><i class="fas fa-video"></i></div><div class="category-title">Security & CCTV</div></div>
-        <div class="category-card" data-category="alarm"><div class="category-icon"><i class="fas fa-bell"></i></div><div class="category-title">Alarm & Safety</div></div>
       </div>
     </div>
     
@@ -570,7 +569,7 @@
       </div>
     </div>
     
-    <!-- Dynamic Requirements Sections -->
+    <!-- Dynamic Requirements Sections (Alarm section REMOVED) -->
     <div id="requirementsContainer"></div>
     
     <!-- Location & Contact -->
@@ -636,7 +635,7 @@ const scrollTopBtn=document.getElementById('scrollTopBtn');window.addEventListen
 // Global state
 let selectedProperty = null;
 let selectedSize = null;
-let selectedCategories = { network: false, cctv: false, alarm: false };
+let selectedCategories = { network: false, cctv: false }; // ALARM REMOVED
 
 // Size options based on property type
 const sizeOptionsMap = {
@@ -689,7 +688,7 @@ document.querySelectorAll('.property-card').forEach(card => {
   });
 });
 
-// Category selection
+// Category selection (Alarm removed)
 document.querySelectorAll('.category-card').forEach(card => {
   card.addEventListener('click', () => {
     const cat = card.dataset.category;
@@ -700,7 +699,7 @@ document.querySelectorAll('.category-card').forEach(card => {
   });
 });
 
-// Render category-specific question sections
+// Render category-specific question sections (Alarm section REMOVED)
 function renderCategorySections() {
   const container = document.getElementById('requirementsContainer');
   let html = '';
@@ -727,18 +726,7 @@ function renderCategorySections() {
       </div>
     </div>`;
   }
-  if (selectedCategories.alarm) {
-    html += `<div class="requirements-sections active" id="alarmSection">
-      <div class="form-section active-section">
-        <h2 class="section-title"><i class="fas fa-bell"></i> Alarm & Safety Details</h2>
-        <div class="form-group"><label class="form-label">Entry points needing sensors?</label><select id="entryPoints"><option value="">None selected</option><option value="few">Just front/back door</option><option value="some">All ground floor doors/windows</option><option value="many">All possible entry points</option></select></div>
-        <div class="form-group"><label class="form-label">Motion sensors inside?</label><div class="radio-group" id="motionSensorsGroup"><label class="radio-option"><input type="radio" name="motionSensors" value="No">No (have pets)</label><label class="radio-option"><input type="radio" name="motionSensors" value="YesPet">Yes (pet-immune)</label><label class="radio-option"><input type="radio" name="motionSensors" value="Yes">Yes (no pets)</label></div></div>
-        <div class="form-group"><label class="form-label">Mobile control?</label><div class="radio-group" id="mobileControlGroup"><label class="radio-option"><input type="radio" name="mobileControl" value="Yes">Yes</label><label class="radio-option"><input type="radio" name="mobileControl" value="No">No</label></div></div>
-        <div class="form-group"><label class="form-label">Load shedding backup?</label><div class="radio-group" id="loadSheddingGroup"><label class="radio-option"><input type="radio" name="loadShedding" value="Yes">Yes</label><label class="radio-option"><input type="radio" name="loadShedding" value="No">No</label></div></div>
-        <div class="form-group"><label class="form-label">Alarm protection level?</label><div class="level-cards" id="alarmLevelCards"><div class="level-card" data-level="basic">🔔 Basic</div><div class="level-card" data-level="standard">📱 Smart Alarm</div><div class="level-card" data-level="premium">🚨 Premium</div></div><input type="hidden" id="alarmLevel"></div>
-      </div>
-    </div>`;
-  }
+  // ALARM SECTION COMPLETELY REMOVED
   container.innerHTML = html;
   // Re-attach level card listeners
   document.querySelectorAll('.level-card').forEach(card => {
@@ -766,9 +754,6 @@ function renderCategorySections() {
       });
     }
   });
-  // Re-attach select change for entryPoints
-  const entryPoints = document.getElementById('entryPoints');
-  if (entryPoints) entryPoints.addEventListener('change', () => {});
 }
 
 // Tech expert toggle
@@ -811,7 +796,7 @@ submitBtn.addEventListener('click', async () => {
   
   const isTechExpert = techToggle ? techToggle.checked : false;
   const categories = Object.keys(selectedCategories).filter(c => selectedCategories[c]);
-  if (!isTechExpert && categories.length === 0) { showError('Please select at least one solution (Network, CCTV, or Alarm).'); return; }
+  if (!isTechExpert && categories.length === 0) { showError('Please select at least one solution (Network or CCTV).'); return; }
   
   // Build submission object
   let submission = {
@@ -843,13 +828,7 @@ submitBtn.addEventListener('click', async () => {
       submission.doorbell = document.querySelector('input[name="doorbell"]:checked')?.value || '';
       submission.cctvLevel = document.getElementById('cctvLevel')?.value || '';
     }
-    if (selectedCategories.alarm) {
-      submission.entryPoints = document.getElementById('entryPoints')?.value || '';
-      submission.motionSensors = document.querySelector('input[name="motionSensors"]:checked')?.value || '';
-      submission.mobileControl = document.querySelector('input[name="mobileControl"]:checked')?.value || '';
-      submission.loadShedding = document.querySelector('input[name="loadShedding"]:checked')?.value || '';
-      submission.alarmLevel = document.getElementById('alarmLevel')?.value || '';
-    }
+    // ALARM SECTION REMOVED
   }
   
   // Disable button and show spinner
