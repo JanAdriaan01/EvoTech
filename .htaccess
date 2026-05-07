@@ -1,0 +1,19 @@
+# ============================================
+# .htaccess File for Net Cam SA
+# Redirects old alarm-systems.html to homepage
+# ============================================
+
+# Redirect /alarm-systems.html to homepage
+Redirect 301 /alarm-systems.html https://www.netcamsa.co.za/
+
+# Optional: Force HTTPS (recommended)
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Optional: Remove trailing slashes (if needed)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Optional: Set default charset
+AddDefaultCharset UTF-8
