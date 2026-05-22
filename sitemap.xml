@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- ==================== PRIORITY 1.0 - HOMEPAGE ==================== -->
+  <!-- CORE HOMEPAGE -->
   <url>
     <loc>https://netcamsa.co.za/</loc>
     <lastmod>2026-05-22</lastmod>
@@ -11,7 +9,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- ==================== PRIORITY 0.95 - NEW GAUTENG LOCATION HUB (REPLACES 35+ PAGES) ==================== -->
+  <!-- LOCATION HUB (REPLACES 35 PAGES) -->
   <url>
     <loc>https://netcamsa.co.za/gauteng-cctv-installers.html</loc>
     <lastmod>2026-05-22</lastmod>
@@ -19,223 +17,37 @@
     <priority>0.95</priority>
   </url>
 
-  <!-- ==================== PRIORITY 0.9 - CCTV SERVICES ==================== -->
-  <url>
-    <loc>https://netcamsa.co.za/ip-camera-systems.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/coax-cctv.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/solar-cctv.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/ptz-cameras.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/cctv-intercom.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- CCTV SERVICES (5 pages) -->
+  <url><loc>https://netcamsa.co.za/ip-camera-systems.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://netcamsa.co.za/coax-cctv.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://netcamsa.co.za/solar-cctv.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://netcamsa.co.za/ptz-cameras.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://netcamsa.co.za/cctv-intercom.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
-  <!-- ==================== PRIORITY 0.85 - NETWORK SERVICES ==================== -->
-  <url>
-    <loc>https://netcamsa.co.za/network.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/wifi-mesh.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/network-cabling.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+  <!-- NETWORK SERVICES (3 pages) -->
+  <url><loc>https://netcamsa.co.za/network.html</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://netcamsa.co.za/wifi-mesh.html</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://netcamsa.co.za/network-cabling.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
-  <!-- ==================== PRIORITY 0.85 - POWER & STORAGE ==================== -->
-  <url>
-    <loc>https://netcamsa.co.za/backup-power-for-cctv.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/nas.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+  <!-- POWER & STORAGE (2 pages) -->
+  <url><loc>https://netcamsa.co.za/backup-power-for-cctv.html</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://netcamsa.co.za/nas.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
-  <!-- ==================== PRIORITY 0.8 - CONVERSION PAGES ==================== -->
-  <url>
-    <loc>https://netcamsa.co.za/requirements.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/contact.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/gallery.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/about.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- SPECIALIZED (2 pages) -->
+  <url><loc>https://netcamsa.co.za/farms.html</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://netcamsa.co.za/self-monitoring-cctv.html</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
-  <!-- ==================== PRIORITY 0.75 - SPECIALIZED SERVICES ==================== -->
-  <url>
-    <loc>https://netcamsa.co.za/fibre-links-for-cctv.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/farms.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/self-monitoring-cctv.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
+  <!-- CONVERSION PAGES (4 pages) -->
+  <url><loc>https://netcamsa.co.za/requirements.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://netcamsa.co.za/contact.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://netcamsa.co.za/gallery.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://netcamsa.co.za/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- ==================== PRIORITY 0.7 - CONTENT / GUIDE PAGES ==================== -->
-  <url>
-    <loc>https://netcamsa.co.za/cctv-buyers-guide.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/solar-cctv-for-farms.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/load-shedding-security-solutions.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- CONTENT PAGE (1 page) -->
+  <url><loc>https://netcamsa.co.za/cctv-buyers-guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <!-- ==================== PRIORITY 0.6 - COMPARISON & INFO PAGES ==================== -->
-  <url>
-    <loc>https://netcamsa.co.za/wifi-mesh-vs-extender.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/cctv-installation-cost-gauteng.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/ip-cctv-vs-coax-cctv.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ==================== PRIORITY 0.5 - SECONDARY SERVICE PAGES ==================== -->
-  <url>
-    <loc>https://netcamsa.co.za/network-upgrade.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/unmanaged-network.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/network-switches.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/routers-for-cctv.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/ups-for-cctv.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- ==================== PRIORITY 0.4 - LEGAL PAGES ==================== -->
-  <url>
-    <loc>https://netcamsa.co.za/privacy-policy.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  
-  <url>
-    <loc>https://netcamsa.co.za/terms-of-service.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
+  <!-- LEGAL PAGES (2 pages) -->
+  <url><loc>https://netcamsa.co.za/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://netcamsa.co.za/terms-of-service.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 
 </urlset>
