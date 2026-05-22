@@ -1,9 +1,87 @@
-# robots.txt
+# robots.txt for netcamsa.co.za
+# Optimized for 28-page site structure with single location hub
+# Last updated: 2026-05-22
+
+# Allow all search engines to crawl
 User-agent: *
 Allow: /
-Sitemap: https://netcamsa.co.za/sitemap.xml
 
-# Disallow component folders
+# ============================================
+# DISALLOW - System & Component Folders
+# ============================================
 Disallow: /components/
-Disallow: /images/
+Disallow: /css/
 Disallow: /js/
+Disallow: /images/
+Disallow: /fonts/
+Disallow: /includes/
+Disallow: /layouts/
+Disallow: /modules/
+Disallow: /templates/
+
+# ============================================
+# DISALLOW - Admin & Backend Access
+# ============================================
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /backup/
+Disallow: /temp/
+Disallow: /tmp/
+
+# ============================================
+# DISALLOW - File Types (if applicable)
+# ============================================
+Disallow: /*.pdf$
+Disallow: /*.zip$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+
+# ============================================
+# ALLOW - Important Pages (explicit allowance)
+# ============================================
+Allow: /$
+Allow: /gauteng-cctv-installers.html$
+Allow: /ip-camera-systems.html$
+Allow: /coax-cctv.html$
+Allow: /solar-cctv.html$
+Allow: /ptz-cameras.html$
+Allow: /cctv-intercom.html$
+Allow: /network.html$
+Allow: /wifi-mesh.html$
+Allow: /network-cabling.html$
+Allow: /backup-power-for-cctv.html$
+Allow: /nas.html$
+Allow: /requirements.html$
+Allow: /contact.html$
+Allow: /gallery.html$
+Allow: /about.html$
+Allow: /fibre-links-for-cctv.html$
+Allow: /farms.html$
+Allow: /self-monitoring-cctv.html$
+Allow: /cctv-buyers-guide.html$
+Allow: /solar-cctv-for-farms.html$
+Allow: /load-shedding-security-solutions.html$
+Allow: /wifi-mesh-vs-extender.html$
+Allow: /cctv-installation-cost-gauteng.html$
+Allow: /ip-cctv-vs-coax-cctv.html$
+Allow: /network-upgrade.html$
+Allow: /unmanaged-network.html$
+Allow: /network-switches.html$
+Allow: /routers-for-cctv.html$
+Allow: /ups-for-cctv.html$
+Allow: /privacy-policy.html$
+Allow: /terms-of-service.html$
+
+# ============================================
+# CRAWL DELAY (Be respectful to server)
+# ============================================
+Crawl-delay: 1
+
+# ============================================
+# SITEMAP LOCATION
+# ============================================
+Sitemap: https://netcamsa.co.za/sitemap.xml
