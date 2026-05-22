@@ -19,9 +19,9 @@
     <priority>0.98</priority>
   </url>
 
-  <!-- ==================== MAIN CATEGORIES - ALL EQUAL PRIORITY 0.95 ==================== -->
+  <!-- ==================== MAIN CATEGORY PAGES - PRIORITY 0.95 ==================== -->
   
-  <!-- CATEGORY 1: CCTV (Main Category Page) -->
+  <!-- CATEGORY 1: CCTV Main Hub -->
   <url>
     <loc>https://netcamsa.co.za/cctv-main.html</loc>
     <lastmod>2026-05-22</lastmod>
@@ -29,7 +29,7 @@
     <priority>0.95</priority>
   </url>
   
-  <!-- CATEGORY 2: NETWORK (Main Category Page) -->
+  <!-- CATEGORY 2: Network Main Hub -->
   <url>
     <loc>https://netcamsa.co.za/network-main.html</loc>
     <lastmod>2026-05-22</lastmod>
@@ -37,7 +37,7 @@
     <priority>0.95</priority>
   </url>
   
-  <!-- CATEGORY 3: BACKUP POWER (Main Category Page) -->
+  <!-- CATEGORY 3: Backup Power Main Hub -->
   <url>
     <loc>https://netcamsa.co.za/backup-power-main.html</loc>
     <lastmod>2026-05-22</lastmod>
@@ -45,7 +45,7 @@
     <priority>0.95</priority>
   </url>
   
-  <!-- CATEGORY 4: STORAGE (Main Category Page) -->
+  <!-- CATEGORY 4: Storage Main Hub -->
   <url>
     <loc>https://netcamsa.co.za/storage-main.html</loc>
     <lastmod>2026-05-22</lastmod>
@@ -53,9 +53,7 @@
     <priority>0.95</priority>
   </url>
 
-  <!-- ==================== SUBCATEGORIES - PRIORITY 0.85 ==================== -->
-  
-  <!-- CCTV Subcategories -->
+  <!-- ==================== CCTV SUBCATEGORIES - PRIORITY 0.85 ==================== -->
   <url>
     <loc>https://netcamsa.co.za/ip-camera-systems.html</loc>
     <lastmod>2026-05-22</lastmod>
@@ -90,15 +88,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  
-  <!-- Network Subcategories -->
-  <url>
-    <loc>https://netcamsa.co.za/network.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
+
+  <!-- ==================== NETWORK SUBCATEGORIES - PRIORITY 0.85 ==================== -->
   <url>
     <loc>https://netcamsa.co.za/wifi-mesh.html</loc>
     <lastmod>2026-05-22</lastmod>
@@ -113,7 +104,21 @@
     <priority>0.85</priority>
   </url>
   
-  <!-- Backup Power Subcategory -->
+  <url>
+    <loc>https://netcamsa.co.za/fibre-links-for-cctv.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://netcamsa.co.za/network-upgrade.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ==================== POWER & STORAGE SUBCATEGORIES - PRIORITY 0.85 ==================== -->
   <url>
     <loc>https://netcamsa.co.za/backup-power-for-cctv.html</loc>
     <lastmod>2026-05-22</lastmod>
@@ -121,7 +126,6 @@
     <priority>0.85</priority>
   </url>
   
-  <!-- Storage Subcategory -->
   <url>
     <loc>https://netcamsa.co.za/nas.html</loc>
     <lastmod>2026-05-22</lastmod>
@@ -129,7 +133,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- ==================== SPECIALIZED PAGES - PRIORITY 0.75 ==================== -->
+  <!-- ==================== SPECIALIZED SERVICES - PRIORITY 0.75 ==================== -->
   <url>
     <loc>https://netcamsa.co.za/farms.html</loc>
     <lastmod>2026-05-22</lastmod>
