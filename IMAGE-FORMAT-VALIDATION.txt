@@ -1,0 +1,84 @@
+backup-power.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/backup-power.jpg: SVG Scalable Vector Graphics image, ASCII text
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/backup-power.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+cctv-hero.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/cctv-hero.jpg: PNG image data, 1536 x 1024, 8-bit/color RGBA, non-interlaced
+  convert: RASTER->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/cctv-hero.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1536x1024, components 3
+
+dvr-system.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/dvr-system.jpg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (352)
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/dvr-system.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+gallery-1.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/gallery-1.jpg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (364)
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/gallery-1.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+gallery-2.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/gallery-2.jpg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (491)
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/gallery-2.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+gallery-3.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/gallery-3.jpg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (364)
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/gallery-3.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+intercom.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/intercom.jpg: PNG image data, 1448 x 1086, 8-bit/color RGB, non-interlaced
+  convert: RASTER->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/intercom.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1448x1086, components 3
+
+ip-camera.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/ip-camera.jpg: PNG image data, 1448 x 1086, 8-bit/color RGB, non-interlaced
+  convert: RASTER->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/ip-camera.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1448x1086, components 3
+
+nas-storage.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/nas-storage.jpg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (371)
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/nas-storage.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+network-cabling.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/network-cabling.jpg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (515)
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/network-cabling.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+network-switch.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/network-switch.jpg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (491)
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/network-switch.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+ptz-camera.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/ptz-camera.jpg: SVG Scalable Vector Graphics image, ASCII text
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/ptz-camera.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+router-backup.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/router-backup.jpg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (409)
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/router-backup.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+solar-cctv.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/solar-cctv.jpg: PNG image data, 1448 x 1086, 8-bit/color RGB, non-interlaced
+  convert: RASTER->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/solar-cctv.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1448x1086, components 3
+
+ups-solutions.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/ups-solutions.jpg: SVG Scalable Vector Graphics image, ASCII text
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/ups-solutions.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+ups-system.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/ups-system.jpg: SVG Scalable Vector Graphics image, ASCII text
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/ups-system.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
+
+wifi-mesh.jpg
+  before: /mnt/data/netcamsa-fixed-image-formats-site/images/wifi-mesh.jpg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (321)
+  convert: SVG->JPEG
+  after:  /mnt/data/netcamsa-fixed-image-formats-site/images/wifi-mesh.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1400x950, components 3
