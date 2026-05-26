@@ -20,7 +20,7 @@
   <g filter="url(#shadow)">
     <rect x="140" y="150" rx="42" width="1120" height="650" fill="#fff" opacity="0.96"/>
     <rect x="190" y="205" rx="28" width="420" height="540" fill="#f5f7f8" stroke="#e6ecef"/>
-    <g transform="translate(250 270)"><rect x="95" y="60" width="210" height="360" rx="30" fill="#161c22"/><rect x="130" y="105" width="140" height="80" rx="18" fill="#39b54a"/><path d="M210 220l-55 100h45l-20 70 70-115h-48z" fill="#fff"/></g>
+    <g transform="translate(250 270)"><rect x="35" y="135" width="330" height="160" rx="22" fill="#161c22"/><g fill="#39b54a"><rect x="70" y="185" width="42" height="36" rx="6"/><rect x="125" y="185" width="42" height="36" rx="6"/><rect x="180" y="185" width="42" height="36" rx="6"/><rect x="235" y="185" width="42" height="36" rx="6"/><rect x="290" y="185" width="42" height="36" rx="6"/></g><path d="M200 300v80M120 380h160" stroke="#39b54a" stroke-width="18" stroke-linecap="round"/></g>
     <rect x="670" y="255" rx="18" width="450" height="26" fill="#39b54a" opacity="0.9"/>
     <rect x="670" y="325" rx="16" width="560" height="24" fill="#161c22" opacity="0.16"/>
     <rect x="670" y="375" rx="16" width="520" height="24" fill="#161c22" opacity="0.12"/>
@@ -28,6 +28,6 @@
     <rect x="670" y="525" rx="24" width="220" height="72" fill="#39b54a"/>
     <text x="780" y="570" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="27" fill="#fff" font-weight="800">NET CAM SA</text>
   </g>
-  <text x="140" y="865" font-family="Inter,Arial,sans-serif" font-size="46" fill="#fff" font-weight="900">UPS Backup Power</text>
-  <text x="140" y="910" font-family="Inter,Arial,sans-serif" font-size="25" fill="#d2dae0" font-weight="500">Load shedding-ready CCTV and network uptime</text>
+  <text x="140" y="865" font-family="Inter,Arial,sans-serif" font-size="46" fill="#fff" font-weight="900">Network Installations</text>
+  <text x="140" y="910" font-family="Inter,Arial,sans-serif" font-size="25" fill="#d2dae0" font-weight="500">Clean cabinet and cabling work</text>
 </svg>

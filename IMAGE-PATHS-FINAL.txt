@@ -1,0 +1,42 @@
+NET CAM SA WEBSITE IMAGE PATHS
+
+Put all images inside:
+/images/
+
+HTML references used across the website:
+
+Main / Homepage:
+images/cctv-hero.jpg
+images/dvr-system.jpg
+images/network-switch.jpg
+images/ups-system.jpg
+images/ip-camera.jpg
+images/solar-cctv.jpg
+images/intercom.jpg
+
+CCTV Pages:
+images/ip-camera.jpg
+images/solar-cctv.jpg
+images/ptz-camera.jpg
+images/intercom.jpg
+images/cctv-hero.jpg
+
+Networking Pages:
+images/network-switch.jpg
+images/network-cabling.jpg
+images/wifi-mesh.jpg
+images/nas-storage.jpg
+
+Backup Power Pages:
+images/backup-power.jpg
+images/router-backup.jpg
+images/ups-system.jpg
+images/ups-solutions.jpg
+
+Gallery:
+images/gallery-1.jpg
+images/gallery-2.jpg
+images/gallery-3.jpg
+
+Included visual preview:
+IMAGE-GRID-PREVIEW.png

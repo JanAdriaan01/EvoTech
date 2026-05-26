@@ -1,146 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- MAIN HOMEPAGE -->
-  <url>
-    <loc>https://netcamsa.co.za/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- MASTER CCTV HUB -->
-  <url>
-    <loc>https://netcamsa.co.za/cctv-installation-gauteng.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <!-- CCTV SEO CLUSTER -->
-  <url>
-    <loc>https://netcamsa.co.za/ip-camera-systems.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/solar-cctv.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/ptz-cameras.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/cctv-intercom.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- NETWORKING HUB -->
-  <url>
-    <loc>https://netcamsa.co.za/network-solutions-gauteng.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <!-- NETWORK SEO CLUSTER -->
-  <url>
-    <loc>https://netcamsa.co.za/wifi-mesh-gauteng.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/network-cabling-gauteng.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/nas-storage-gauteng.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- BACKUP POWER HUB -->
-  <url>
-    <loc>https://netcamsa.co.za/load-shedding-solutions-gauteng.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <!-- POWER SEO CLUSTER -->
-  <url>
-    <loc>https://netcamsa.co.za/backup-power-for-cctv.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/router-backup-gauteng.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/ups-solutions-gauteng.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- TRUST & CONVERSION -->
-  <url>
-    <loc>https://netcamsa.co.za/about.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/gallery.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/contact.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://netcamsa.co.za/requirements.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- LEGAL -->
-  <url>
-    <loc>https://netcamsa.co.za/privacy-policy.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
+  <url><loc>https://netcamsa.co.za/index.html</loc></url>
+  <url><loc>https://netcamsa.co.za/cctv-installation-gauteng.html</loc></url>
+  <url><loc>https://netcamsa.co.za/ip-camera-systems.html</loc></url>
+  <url><loc>https://netcamsa.co.za/solar-cctv.html</loc></url>
+  <url><loc>https://netcamsa.co.za/ptz-cameras.html</loc></url>
+  <url><loc>https://netcamsa.co.za/cctv-intercom.html</loc></url>
+  <url><loc>https://netcamsa.co.za/network-solutions-gauteng.html</loc></url>
+  <url><loc>https://netcamsa.co.za/wifi-mesh-gauteng.html</loc></url>
+  <url><loc>https://netcamsa.co.za/network-cabling-gauteng.html</loc></url>
+  <url><loc>https://netcamsa.co.za/nas-storage-gauteng.html</loc></url>
+  <url><loc>https://netcamsa.co.za/load-shedding-solutions-gauteng.html</loc></url>
+  <url><loc>https://netcamsa.co.za/backup-power-for-cctv.html</loc></url>
+  <url><loc>https://netcamsa.co.za/router-backup-gauteng.html</loc></url>
+  <url><loc>https://netcamsa.co.za/ups-solutions-gauteng.html</loc></url>
+  <url><loc>https://netcamsa.co.za/about.html</loc></url>
+  <url><loc>https://netcamsa.co.za/gallery.html</loc></url>
+  <url><loc>https://netcamsa.co.za/contact.html</loc></url>
+  <url><loc>https://netcamsa.co.za/requirements.html</loc></url>
 </urlset>

@@ -28,6 +28,6 @@
     <rect x="670" y="525" rx="24" width="220" height="72" fill="#39b54a"/>
     <text x="780" y="570" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="27" fill="#fff" font-weight="800">NET CAM SA</text>
   </g>
-  <text x="140" y="865" font-family="Inter,Arial,sans-serif" font-size="46" fill="#fff" font-weight="900">UPS Backup Power</text>
-  <text x="140" y="910" font-family="Inter,Arial,sans-serif" font-size="25" fill="#d2dae0" font-weight="500">Load shedding-ready CCTV and network uptime</text>
+  <text x="140" y="865" font-family="Inter,Arial,sans-serif" font-size="46" fill="#fff" font-weight="900">Backup Power Systems</text>
+  <text x="140" y="910" font-family="Inter,Arial,sans-serif" font-size="25" fill="#d2dae0" font-weight="500">Battery backup for cameras, routers and fibre</text>
 </svg>

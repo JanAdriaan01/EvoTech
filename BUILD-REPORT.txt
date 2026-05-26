@@ -1,0 +1,115 @@
+NET CAM SA FINAL WEBSITE BUILD REPORT
+
+HTML pages included:
+- about.html
+- backup-power-for-cctv.html
+- cctv-installation-gauteng.html
+- cctv-intercom.html
+- contact.html
+- gallery.html
+- index.html
+- ip-camera-systems.html
+- load-shedding-solutions-gauteng.html
+- nas-storage-gauteng.html
+- network-cabling-gauteng.html
+- network-solutions-gauteng.html
+- ptz-cameras.html
+- requirements.html
+- router-backup-gauteng.html
+- solar-cctv.html
+- ups-solutions-gauteng.html
+- wifi-mesh-gauteng.html
+
+Images included in /images/:
+- images/backup-power.jpg
+- images/cctv-hero.jpg
+- images/dvr-system.jpg
+- images/gallery-1.jpg
+- images/gallery-2.jpg
+- images/gallery-3.jpg
+- images/intercom.jpg
+- images/ip-camera.jpg
+- images/nas-storage.jpg
+- images/network-cabling.jpg
+- images/network-switch.jpg
+- images/ptz-camera.jpg
+- images/router-backup.jpg
+- images/solar-cctv.jpg
+- images/ups-solutions.jpg
+- images/ups-system.jpg
+- images/wifi-mesh.jpg
+
+Image paths used per page:
+
+about.html:
+- images/cctv-hero.jpg
+
+backup-power-for-cctv.html:
+- images/ups-system.jpg
+- images/cctv-hero.jpg
+
+cctv-installation-gauteng.html:
+- images/cctv-hero.jpg
+- images/cctv-hero.jpg
+
+cctv-intercom.html:
+- images/intercom.jpg
+- images/cctv-hero.jpg
+
+contact.html:
+- images/intercom.jpg
+
+gallery.html:
+- images/gallery-1.jpg
+
+index.html:
+- images/cctv-hero.jpg
+- images/dvr-system.jpg
+- images/network-switch.jpg
+- images/ups-system.jpg
+- images/ip-camera.jpg
+- images/solar-cctv.jpg
+- images/intercom.jpg
+
+ip-camera-systems.html:
+- images/ip-camera.jpg
+- images/cctv-hero.jpg
+
+load-shedding-solutions-gauteng.html:
+- images/backup-power.jpg
+- images/cctv-hero.jpg
+
+nas-storage-gauteng.html:
+- images/nas-storage.jpg
+- images/cctv-hero.jpg
+
+network-cabling-gauteng.html:
+- images/network-cabling.jpg
+- images/cctv-hero.jpg
+
+network-solutions-gauteng.html:
+- images/network-switch.jpg
+- images/cctv-hero.jpg
+
+ptz-cameras.html:
+- images/ptz-camera.jpg
+- images/cctv-hero.jpg
+
+requirements.html:
+- images/cctv-hero.jpg
+
+router-backup-gauteng.html:
+- images/router-backup.jpg
+- images/cctv-hero.jpg
+
+solar-cctv.html:
+- images/solar-cctv.jpg
+- images/cctv-hero.jpg
+
+ups-solutions-gauteng.html:
+- images/ups-solutions.jpg
+- images/cctv-hero.jpg
+
+wifi-mesh-gauteng.html:
+- images/wifi-mesh.jpg
+- images/cctv-hero.jpg

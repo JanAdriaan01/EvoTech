@@ -1,0 +1,22 @@
+NET CAM SA IMAGE PATH MAP
+
+Real generated photos supplied/used:
+images/cctv-hero.jpg - main CCTV hero from your supplied/generation context
+images/ip-camera.jpg - IP camera system / technician installing outdoor camera
+images/solar-cctv.jpg - solar CCTV / off-grid farm surveillance
+images/intercom.jpg - video intercom / modern gate smartphone answering
+
+Relevant branded visual assets used where no exact photo was supplied, to avoid misleading generic photos:
+images/dvr-system.jpg - DVR/NVR recording infrastructure
+images/network-switch.jpg - PoE/network switching
+images/ups-system.jpg - CCTV/Network UPS backup power
+images/ptz-camera.jpg - PTZ camera solution
+images/network-cabling.jpg - structured cabling
+images/wifi-mesh.jpg - WiFi mesh
+images/nas-storage.jpg - NAS storage
+images/backup-power.jpg - backup power systems
+images/router-backup.jpg - router and fibre backup
+images/ups-solutions.jpg - UPS solutions
+images/gallery-1.jpg - gallery CCTV
+images/gallery-2.jpg - gallery networking
+images/gallery-3.jpg - gallery intercom
